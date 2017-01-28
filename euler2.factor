@@ -15,7 +15,7 @@ IN: euler2
 ! 40 is an arbitrary stopping point because
 ! I just happen to know that's far enough
 
-: e2 ( -- )
+: euler2 ( -- )
     40 [0,b]
     [ fibonacci ] map
     [ 4000000 <= ] filter
@@ -23,4 +23,4 @@ IN: euler2
     sum
     present print ;
 
-MAIN: e2
+MAIN: euler2
