@@ -8,7 +8,7 @@ IN: euler2
 : fib-h ( x y n -- y x+y n-1 )
     dup zero?
     [ ]
-    [ 1 - -rot swap  over + rot fib-h ]
+    [ 1 - -rot swap over + rot fib-h ]
     if ;
     recursive
 
