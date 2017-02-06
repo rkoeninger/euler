@@ -1,25 +1,26 @@
 USE: math
 USE: math.functions
 USE: math.ranges
-USE: locals
 USE: present
 USE: io
 IN: euler2
 
-: gold ( -- n ) 1 5 sqrt + 2 / ;
+: fib-h ( x y n -- y x+y n-1 )
+    dup zero?
+    [ ]
+    [ 1 - -rot swap  over + rot fib-h ]
+    if ;
+    recursive
 
-: gold' ( -- n ) 1 5 sqrt - 2 / ;
-
-:: fibonacci ( n -- x ) gold n ^ gold' n ^ - 5 sqrt / ceiling >integer ;
-
-! 40 is an arbitrary stopping point because
-! I just happen to know that's far enough
+: fibonacci ( n -- x )
+    0 1 rot
+    fib-h
+    drop nip ;
 
 : euler2 ( -- )
-    40 [0,b]
+    40 [0,b] ! 40 is an arbitrary stopping point known to be far enough
     [ fibonacci ] map
-    [ 4000000 <= ] filter
-    [ even? ] filter
+    [ [ 4000000 <= ] [ even? ] bi and ] filter
     sum
     present print ;
 
