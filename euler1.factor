@@ -1,4 +1,5 @@
 USE: math
+USE: math.functions
 USE: math.ranges
 USE: present
 USE: io
@@ -6,7 +7,7 @@ IN: euler1
 
 : euler1 ( -- )
     1000 [0,b)
-    [ dup 3 mod 0 = swap 5 mod 0 = or ] filter
+    [ [ 3 divisor? ] [ 5 divisor? ] bi or ] filter
     sum
     present print ;
 
