@@ -8,8 +8,8 @@ IN: euler6
 : euler6 ( -- )
     1000
     [1,b]
-    [ sum dup * ]
-    [ [ dup * ] map sum ]
+    [ sum sq ]
+    [ [ sq ] map sum ]
     bi -
     present print ;
 
