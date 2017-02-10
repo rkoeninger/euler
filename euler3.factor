@@ -7,20 +7,26 @@ USE: io
 IN: euler3
 
 :: prime? ( n -- b )
-    2 n [a,b)
-    [ n swap mod 0 = ] any?
-    not ;
+    2 n sqrt ceiling >integer [a,b]
+    [ n swap divisor? ] filter
+    any? not ;
 
-:: largest-prime-factor ( n -- m )
+:: prime-factors ( n -- xs )
     2 n [a,b)
-    [ prime? ] filter
-    [ n swap mod 0 = ] filter
-    last ;
+    [ n swap divisor? ] filter ;
+
+: largest-prime-factor ( n -- x )
+    prime-factors
+    dup empty?
+    [ last ]
+    [ drop -1 ]
+    if ;
 
 : euler3 ( -- )
     600851475143 largest-prime-factor
     present print ;
 
-! This causes the factor listener to crash
+! Calling largest-prime-factor on a large value
+! causes the factor listener to crash
 
 MAIN: euler3
