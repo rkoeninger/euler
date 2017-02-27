@@ -10,7 +10,7 @@ IN: euler2
     [ ]
     [ 1 - -rot swap over + rot fib-h ]
     if ;
-    recursive
+recursive
 
 : fibonacci ( n -- x )
     0 1 rot
