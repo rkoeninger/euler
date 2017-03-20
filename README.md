@@ -1,7 +1,5 @@
 # Project Euler Solutions
 
-Solved so far:
-
 | # | Descripion | Code |
 |---|------------|------|
 | 1 | [Sum of multiples of 3 and 5 < 1000](https://projecteuler.net/problem=1) | [euler1.factor](https://github.com/rkoeninger/euler/blob/master/euler1.factor) |
