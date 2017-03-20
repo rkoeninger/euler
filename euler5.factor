@@ -42,18 +42,12 @@ IN: euler5
     [ 2drop 0 ]
     if ; recursive
 
-: prime-factors ( ps n -- pfs )
-    [ swap prime-pow ] curry map ;
-
-: zip-max ( xs ys -- zs )
-    [ max ] 2map ;
-
 : euler5 ( -- )
     { } 20 2 primes dup dup
     [ drop 0 ] map swap
     2 20 [a,b] swap
-    [ swap prime-factors ] curry map
-    swap [ zip-max ] reduce
+    [ swap [ swap prime-pow ] curry map ] curry map
+    swap [ [ max ] 2map ] reduce
     [ ^ ] 2map
     1 [ * ] reduce
     present print ;
