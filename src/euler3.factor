@@ -4,25 +4,38 @@
 USE: math
 USE: math.ranges
 USE: sequences
-USE: locals
 USE: present
 USE: io
 IN: euler3
 
-:: prime? ( n -- b )
-    2 n sqrt ceiling >integer [a,b]
-    [ n swap divisor? ] filter
-    any? not ;
+: prime? ( n -- ? )
+    dup 2 =
+    [ drop t ]
+    [
+        dup
+        sqrt ceiling >integer
+        2 swap [a,b]
+        swap [ swap divisor? ] curry
+        any? not
+    ]
+    if ;
 
-:: prime-factors ( n -- xs )
-    2 n [a,b)
-    [ n swap divisor? ] filter ;
+: prime-factors ( n -- xs )
+    dup
+    2 swap [a,b)
+    swap
+    [
+        [ swap divisor? ] curry
+        [ prime? ]
+        bi and
+    ]
+    curry filter ;
 
 : largest-prime-factor ( n -- x )
     prime-factors
     dup empty?
-    [ last ]
     [ drop -1 ]
+    [ last ]
     if ;
 
 : euler3 ( -- )
