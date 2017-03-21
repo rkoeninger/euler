@@ -1,5 +1,7 @@
 # Project Euler Solutions
 
+All solutions are provided in [Factor](https://factorcode.org/), a dynamically typed, stack-oriented, concatenative language that offers a different perspective on functional programming.
+
 | # | Descripion | Code |
 |---|------------|------|
 | 1 | [Sum of multiples of 3 or 5 < 1000](https://projecteuler.net/problem=1) | [euler1.factor](https://github.com/rkoeninger/euler/blob/master/src/euler1.factor) |
