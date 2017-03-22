@@ -12,11 +12,16 @@ USE: vectors
 USE: io
 IN: euler4
 
+: tup ( x y -- xy )
+    1vector swap
+    1vector swap
+    append ;
+
 : pairs ( -- xs )
     100 1000 [a,b) reverse
     dup [ swap [ tup ] curry map ] curry map ;
 
-: palindrome? ( x -- ? ) f ;
+: palindrome? ( x -- ? ) drop f ;
 
 : euler4 ( -- )
     pairs [ product palindrome? ] filter first
