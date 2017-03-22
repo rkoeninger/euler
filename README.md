@@ -10,3 +10,4 @@ All solutions are provided in [Factor](https://factorcode.org/), a dynamically t
 | 4 | [Largest palindrome product of \[100..999\] * \[100..999\]](https://projecteuler.net/problem=4) | [euler4.factor](https://github.com/rkoeninger/euler/blob/master/src/euler4.factor) |
 | 5 | [Lowest common multiple of \[1..20\]](https://projecteuler.net/problem=5) | [euler5.factor](https://github.com/rkoeninger/euler/blob/master/src/euler5.factor) |
 | 6 | [\(Square of sum - sum of squares\) of \[1..100\]](https://projecteuler.net/problem=6) | [euler6.factor](https://github.com/rkoeninger/euler/blob/master/src/euler6.factor) |
+| 7 | [10,001st prime](https://projecteuler.net/problem=7) | [euler7.factor](https://github.com/rkoeninger/euler/blob/master/src/euler7.factor) |
