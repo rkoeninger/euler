@@ -15,7 +15,7 @@ USE: io
 IN: euler6
 
 : euler6 ( -- )
-    1000 [1,b]
+    100 [1,b]
     [ sum sq ]
     [ [ sq ] map sum ]
     bi -
