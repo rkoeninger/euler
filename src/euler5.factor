@@ -48,8 +48,7 @@ IN: euler5
     2 20 [a,b] swap
     [ swap [ swap prime-pow ] curry map ] curry map
     swap [ [ max ] 2map ] reduce
-    [ ^ ] 2map
-    1 [ * ] reduce
+    [ ^ ] 2map product
     present print ;
 
 MAIN: euler5
