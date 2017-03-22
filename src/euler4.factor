@@ -22,7 +22,8 @@ IN: euler4
     dup [ swap [ tup ] curry map ] curry map
     concat ;
 
-: palindrome? ( x -- ? ) drop f ;
+: palindrome? ( x -- ? )
+    present dup reverse = ;
 
 : euler4 ( -- )
     pairs [ product palindrome? ] filter first
