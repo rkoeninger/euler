@@ -16,7 +16,8 @@ IN: euler2
     [ dup last 4000000 < ]
     [ dup 2 tail* sum suffix ]
     while
-    [ even? ] filter
-    sum ;
+    [ [ 4000000 < ] [ even? ] bi and ] filter
+    sum
+    present print ;
 
 MAIN: euler2
