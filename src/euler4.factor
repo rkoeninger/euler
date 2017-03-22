@@ -19,7 +19,8 @@ IN: euler4
 
 : pairs ( -- xs )
     100 1000 [a,b) reverse
-    dup [ swap [ tup ] curry map ] curry map ;
+    dup [ swap [ tup ] curry map ] curry map
+    concat ;
 
 : palindrome? ( x -- ? ) drop f ;
 
