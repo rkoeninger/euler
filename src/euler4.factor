@@ -3,6 +3,7 @@
 ! Find the largest palindrome made from the product of two 3-digit numbers.
 
 USE: math
+USE: math.compare
 USE: math.functions
 USE: math.order
 USE: math.ranges
