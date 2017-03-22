@@ -33,14 +33,16 @@ IN: euler5
         1 +
         primes
     ]
-    if ; recursive
+    if ;
+recursive
 
 : prime-pow ( x b -- n )
     2dup
     divisor?
     [ swap over / swap prime-pow 1 + ]
     [ 2drop 0 ]
-    if ; recursive
+    if ;
+recursive
 
 : euler5 ( -- )
     { } 20 2 primes dup dup

@@ -8,6 +8,24 @@ USE: present
 USE: io
 IN: euler3
 
+: divisor-any? ( ps n -- ? )
+    [ swap divisor? ] curry any? ;
+
+: next-prime ( ps0 n -- ps1 )
+    2dup divisor-any?
+    [ 1 + next-prime ]
+    [ suffix ]
+    if ;
+recursive
+
+: factor-out ( p x -- y )
+    2dup swap
+    divisor?
+    [ over / factor-out ]
+    [ nip ]
+    if ;
+recursive
+
 : prime? ( n -- ? )
     dup 2 =
     [ drop t ]
