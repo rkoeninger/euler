@@ -19,7 +19,7 @@ IN: euler4
     append ;
 
 : pairs ( -- xs )
-    100 1000 [a,b) reverse
+    100 1000 [a,b)
     dup [ swap [ tup ] curry map ] curry map
     concat ;
 
@@ -27,7 +27,10 @@ IN: euler4
     present dup reverse = ;
 
 : euler4 ( -- )
-    pairs [ product palindrome? ] filter first
+    pairs
+    [ product palindrome? ] filter
+    0 0 tup [ [ product ] max-by ] reduce
+    product
     present print ;
 
 MAIN: euler4
