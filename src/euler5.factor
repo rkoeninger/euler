@@ -36,6 +36,9 @@ IN: euler5
     if ;
 recursive
 
+! TODO: this can be done by just taking `pow(p, floor(log L / log p))`
+!       for each prime `p` under the limit L (20) and multiplying them together.
+
 : prime-pow ( x b -- n )
     2dup
     divisor?
