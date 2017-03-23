@@ -12,3 +12,4 @@ All solutions are provided in [Factor](https://factorcode.org/), a dynamically t
 | 6 | [\(Square of sum - sum of squares\) of \[1..100\]](https://projecteuler.net/problem=6) | [euler6.factor](https://github.com/rkoeninger/euler/blob/master/src/euler6.factor) |
 | 7 | [10,001st prime](https://projecteuler.net/problem=7) | [euler7.factor](https://github.com/rkoeninger/euler/blob/master/src/euler7.factor) |
 | 8 | [Largest product of 13 consecutive digits in 1000-digit number](https://projecteuler.net/problem=7) | [euler8.factor](https://github.com/rkoeninger/euler/blob/master/src/euler8.factor) |
+| 10 | [Sum of primes below 2,000,000](https://projecteuler.net/problem=10) | [euler10.factor](https://github.com/rkoeninger/euler/blob/master/src/euler10.factor) |
