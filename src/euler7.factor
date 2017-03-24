@@ -8,7 +8,7 @@ USE: sequences
 USE: present
 USE: vectors
 USE: io
-IN: euler5
+IN: euler7
 
 : divisor-any? ( ps x -- ? )
     [ swap divisor? ] curry any? ;
