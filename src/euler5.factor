@@ -5,11 +5,9 @@
 
 USE: math
 USE: math.functions
-USE: math.order
 USE: math.ranges
 USE: sequences
 USE: present
-USE: vectors
 USE: io
 IN: euler5
 
@@ -23,11 +21,7 @@ IN: euler5
         swapd 2dup
         divisor-any?
         [ ]
-        [
-            swap over
-            1vector append
-            swap
-        ]
+        [ swap over suffix swap ]
         if
         swapd
         1 +
@@ -36,24 +30,12 @@ IN: euler5
     if ;
 recursive
 
-! TODO: this can be done by just taking `pow(p, floor(log L / log p))`
-!       for each prime `p` under the limit L (20) and multiplying them together.
-
-: prime-pow ( x b -- n )
-    2dup
-    divisor?
-    [ swap over / swap prime-pow 1 + ]
-    [ 2drop 0 ]
-    if ;
-recursive
-
 : euler5 ( -- )
-    { } 20 2 primes dup dup
-    [ drop 0 ] map swap
-    2 20 [a,b] swap
-    [ swap [ swap prime-pow ] curry map ] curry map
-    swap [ [ max ] 2map ] reduce
-    [ ^ ] 2map product
+    { } 20 2 primes
+    dup
+    [ 20 log swap log / floor >integer ] map
+    [ ^ ] 2map
+    product
     present print ;
 
 MAIN: euler5
