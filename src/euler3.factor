@@ -56,6 +56,26 @@ recursive
     [ last ]
     if ;
 
+! TODO:
+! Scan up the list of primes,
+! when we discover a new prime,
+! If it's larger than the remaining goal,
+! the previous prime factor is the answer.
+! If not larger,
+! factor-out that prime and add it
+! to the end of the list of primes.
+! If it divided at least once, it is
+! the new candidate largest prime factor.
+
+: take-until-slice ( xs q -- ys ) dupd find drop head-slice ; inline
+
+! Use take-until-slice to scan a smaller range of primes to
+! check further values for prime-ness (this can also be used in problem 5)
+! { 2 3 5 7 9 11 13 17 19 }
+! 22 sqrt ceiling >integer [ > ] curry
+! take-until-slice >vector .
+! => V{ 2 3 5 }
+
 : euler3 ( -- )
     600851475143 largest-prime-factor
     present print ;
