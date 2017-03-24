@@ -3,8 +3,6 @@
 ! Find the largest palindrome made from the product of two 3-digit numbers.
 
 USE: math
-USE: math.compare
-USE: math.functions
 USE: math.order
 USE: math.ranges
 USE: sequences
@@ -13,24 +11,26 @@ USE: vectors
 USE: io
 IN: euler4
 
-: tup ( x y -- xy )
-    1vector swap
-    1vector swap
-    append ;
-
-: pairs ( -- xs )
-    100 1000 [a,b)
-    dup [ swap [ tup ] curry map ] curry map
-    concat ;
-
 : palindrome? ( x -- ? )
     present dup reverse = ;
 
+! Generate progressively longer sequences to avoid
+! duplicate pairs, cutting search space in half:
+
+!     100*100
+!     100*101 101*101
+!     100*102 101*102 102*102
+!     100*103 101*103 102*103 103*103
+
 : euler4 ( -- )
-    pairs
-    [ product palindrome? ] filter
-    0 0 tup [ [ product ] max-by ] reduce
-    product
+    100 1000 [a,b)
+    [
+        dup 100 swap [a,b]
+        swap [ * ] curry map
+    ]
+    map concat
+    [ palindrome? ] filter
+    0 [ max ] reduce
     present print ;
 
 MAIN: euler4
