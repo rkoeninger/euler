@@ -30,7 +30,7 @@ IN: euler4
     ]
     map concat
     [ palindrome? ] filter
-    0 [ max ] reduce
+    supremum
     present print ;
 
 MAIN: euler4
