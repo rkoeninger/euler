@@ -9,12 +9,12 @@ USE: present
 USE: io
 IN: euler3
 
-! TODO: find puts a two `f` on top of the stack when element not found
-!       handle this by taking the entire sequence
-
 : take-until-slice ( xs q -- ys )
     dupd find
-    drop head-slice ;
+    over f =
+    [ 2drop ]
+    [ drop head-slice ]
+    if ;
 inline
 
 : divisor-any? ( ps n -- ? )
@@ -45,9 +45,9 @@ recursive
         rot dup last 1 + next-prime
         swapd dup last swapd 2dup divisor?
         [ [ drop ] 3dip swap dupd factor-out swap ]
-        [ drop ]
+        [ drop rot ]
         if
-        rot largest-prime-factor
+        largest-prime-factor
     ]
     [ 2nip ]
     if ;

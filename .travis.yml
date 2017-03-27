@@ -11,7 +11,7 @@ script:
   - TIMEFORMAT="%E seconds"
   - time ./factor/factor -run=euler1
   - time ./factor/factor -run=euler2
-  #- time ./factor/factor -run=euler3
+  - time ./factor/factor -run=euler3
   - time ./factor/factor -run=euler4
   - time ./factor/factor -run=euler5
   - time ./factor/factor -run=euler6
