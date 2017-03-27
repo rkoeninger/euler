@@ -2,14 +2,26 @@
 ! What is the largest prime factor of the number 600851475143?
 
 USE: math
+USE: math.functions
 USE: math.ranges
 USE: sequences
 USE: present
 USE: io
 IN: euler3
 
+! TODO: find puts a two `f` on top of the stack when element not found
+!       handle this by taking the entire sequence
+
+: take-until-slice ( xs q -- ys )
+    dupd find
+    drop head-slice ;
+inline
+
 : divisor-any? ( ps n -- ? )
-    [ swap divisor? ] curry any? ;
+    dup -rot
+    sqrt ceiling >integer
+    [ > ] curry take-until-slice
+    swap [ swap divisor? ] curry any? ;
 
 : next-prime ( ps0 n -- ps1 )
     2dup divisor-any?
@@ -26,61 +38,23 @@ recursive
     if ;
 recursive
 
-: prime? ( n -- ? )
-    dup 2 =
-    [ drop t ]
+: largest-prime-factor ( ps g cpf -- lpf )
+    2dup
+    >
     [
-        dup
-        sqrt ceiling >integer
-        2 swap [a,b]
-        swap [ swap divisor? ] curry
-        any? not
+        rot dup last 1 + next-prime
+        swapd dup last swapd 2dup divisor?
+        [ [ drop ] 3dip swap dupd factor-out swap ]
+        [ drop ]
+        if
+        rot largest-prime-factor
     ]
+    [ 2nip ]
     if ;
-
-: prime-factors ( n -- xs )
-    dup
-    2 swap [a,b)
-    swap
-    [
-        [ swap divisor? ] curry
-        [ prime? ]
-        bi and
-    ]
-    curry filter ;
-
-: largest-prime-factor ( n -- x )
-    prime-factors
-    dup empty?
-    [ drop -1 ]
-    [ last ]
-    if ;
-
-! TODO:
-! Scan up the list of primes,
-! when we discover a new prime,
-! If it's larger than the remaining goal,
-! the previous prime factor is the answer.
-! If not larger,
-! factor-out that prime and add it
-! to the end of the list of primes.
-! If it divided at least once, it is
-! the new candidate largest prime factor.
-
-: take-until-slice ( xs q -- ys ) dupd find drop head-slice ; inline
-
-! Use take-until-slice to scan a smaller range of primes to
-! check further values for prime-ness (this can also be used in problem 5)
-! { 2 3 5 7 9 11 13 17 19 }
-! 22 sqrt ceiling >integer [ > ] curry
-! take-until-slice >vector .
-! => V{ 2 3 5 }
+recursive
 
 : euler3 ( -- )
-    600851475143 largest-prime-factor
+    { 2 } 600851475143 0 largest-prime-factor
     present print ;
-
-! Calling largest-prime-factor on a large value
-! causes the factor listener to crash
 
 MAIN: euler3
