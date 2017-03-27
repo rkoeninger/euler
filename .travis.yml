@@ -8,12 +8,12 @@ install:
   - tar -xf factor-linux-x86-64-0.97.tar.gz
 script:
   - cp -R src/. factor/work
-  - time ./factor/factor -run=euler1
-  - time ./factor/factor -run=euler2
-  #- time ./factor/factor -run=euler3
-  - time ./factor/factor -run=euler4
-  - time ./factor/factor -run=euler5
-  - time ./factor/factor -run=euler6
-  - time ./factor/factor -run=euler7
-  - time ./factor/factor -run=euler8
-  #- time ./factor/factor -run=euler10
+  - time -f "%E" ./factor/factor -run=euler1
+  - time -f "%E" ./factor/factor -run=euler2
+  #- time -f "%E" ./factor/factor -run=euler3
+  - time -f "%E" ./factor/factor -run=euler4
+  - time -f "%E" ./factor/factor -run=euler5
+  - time -f "%E" ./factor/factor -run=euler6
+  - time -f "%E" ./factor/factor -run=euler7
+  - time -f "%E" ./factor/factor -run=euler8
+  #- time -f "%E" ./factor/factor -run=euler10
