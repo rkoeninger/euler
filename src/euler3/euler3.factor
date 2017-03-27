@@ -1,12 +1,13 @@
 ! The prime factors of 13195 are 5, 7, 13 and 29.
 ! What is the largest prime factor of the number 600851475143?
 
+USE: io
+USE: kernel
 USE: math
 USE: math.functions
 USE: math.ranges
-USE: sequences
 USE: present
-USE: io
+USE: sequences
 IN: euler3
 
 : take-until-slice ( xs q -- ys )
