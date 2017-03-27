@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/rkoeninger/euler.svg?branch=master)](https://travis-ci.org/rkoeninger/euler)
+
 # Project Euler Solutions
 
 All solutions are provided in [Factor](https://factorcode.org/), a dynamically typed, stack-oriented, concatenative language that offers a different perspective on functional programming.
