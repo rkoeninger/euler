@@ -9,3 +9,5 @@ script:
   - cp -R src/. factor/work
   - ./factor/factor -run=euler1
   - ./factor/factor -run=euler2
+  - ./factor/factor -run=euler4
+  - ./factor/factor -run=euler5
