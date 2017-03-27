@@ -7,11 +7,12 @@
 ! Find the difference between the sum of the squares of the first
 ! one hundred natural numbers and the square of the sum.
 
+USE: io
+USE: kernel
 USE: math
 USE: math.ranges
-USE: sequences
 USE: present
-USE: io
+USE: sequences
 IN: euler6
 
 : euler6 ( -- )

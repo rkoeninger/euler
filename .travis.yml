@@ -12,3 +12,5 @@ script:
   - ./factor/factor -run=euler2
   - ./factor/factor -run=euler4
   - ./factor/factor -run=euler5
+  - ./factor/factor -run=euler6
+  - ./factor/factor -run=euler7

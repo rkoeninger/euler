@@ -1,13 +1,14 @@
 ! If 2 is the 1st prime number, what is the 10001st?
 
+USE: kernel
+USE: io
 USE: math
 USE: math.functions
 USE: math.order
 USE: math.ranges
-USE: sequences
 USE: present
+USE: sequences
 USE: vectors
-USE: io
 IN: euler7
 
 : divisor-any? ( ps x -- ? )
