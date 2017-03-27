@@ -7,6 +7,7 @@ USE: math
 USE: math.parser
 USE: math.ranges
 USE: present
+USE: regexp
 USE: sequences
 IN: euler8
 
