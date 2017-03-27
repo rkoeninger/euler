@@ -1,6 +1,7 @@
 notifications:
   email: false
 sudo: required
+language: generic
 install:
   - sudo apt-get install libgtkglext1
   - wget http://downloads.factorcode.org/releases/0.97/factor-linux-x86-64-0.97.tar.gz
