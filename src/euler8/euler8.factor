@@ -4,6 +4,7 @@
 USE: io
 USE: kernel
 USE: math
+USE: math.order
 USE: math.parser
 USE: math.ranges
 USE: present
