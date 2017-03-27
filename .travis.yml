@@ -1,0 +1,8 @@
+notifications:
+  email: false
+install:
+  - wget http://downloads.factorcode.org/releases/0.97/factor-linux-x86-32-0.97.tar.gz
+  - tar -xvf factor-linux-x86-32-0.97.tar.gz
+script:
+  - cp -R --preserve=all src/. factor/work
+  - ./factor/factor -run=euler1
