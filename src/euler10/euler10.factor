@@ -11,8 +11,19 @@ USE: sequences
 USE: vectors
 IN: euler10
 
+: take-until-slice ( xs q -- ys )
+    dupd find
+    over f =
+    [ 2drop ]
+    [ drop head-slice ]
+    if ;
+inline
+
 : divisor-any? ( ps n -- ? )
-    [ swap divisor? ] curry any? ;
+    dup -rot
+    sqrt ceiling >integer
+    [ > ] curry take-until-slice
+    swap [ swap divisor? ] curry any? ;
 
 : primes ( ps0 lim n -- ps )
     2dup <
@@ -21,11 +32,7 @@ IN: euler10
         swapd 2dup
         divisor-any?
         [ ]
-        [
-            swap over
-            1vector append
-            swap
-        ]
+        [ swap over suffix swap ]
         if
         swapd
         1 +
