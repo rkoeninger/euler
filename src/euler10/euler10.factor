@@ -1,13 +1,14 @@
 ! Find the sum of all the primes below two million.
 
+USE: io
+USE: kernel
 USE: math
 USE: math.functions
 USE: math.order
 USE: math.ranges
-USE: sequences
 USE: present
+USE: sequences
 USE: vectors
-USE: io
 IN: euler10
 
 : divisor-any? ( ps n -- ? )

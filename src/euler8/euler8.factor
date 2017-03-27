@@ -1,12 +1,13 @@
 ! Find the 13 consecutive digits with the largest
 ! product in the 1000 digit number below
 
+USE: io
+USE: kernel
 USE: math
 USE: math.parser
 USE: math.ranges
-USE: sequences
 USE: present
-USE: io
+USE: sequences
 IN: euler8
 
 : big-number ( -- s )

@@ -1,7 +1,7 @@
 ! If 2 is the 1st prime number, what is the 10001st?
 
-USE: kernel
 USE: io
+USE: kernel
 USE: math
 USE: math.functions
 USE: math.order
