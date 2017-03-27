@@ -2,13 +2,14 @@
 ! palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
 ! Find the largest palindrome made from the product of two 3-digit numbers.
 
+USE: io
+USE: kernel
 USE: math
 USE: math.order
 USE: math.ranges
-USE: sequences
 USE: present
+USE: sequences
 USE: vectors
-USE: io
 IN: euler4
 
 : palindrome? ( x -- ? )

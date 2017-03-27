@@ -3,12 +3,13 @@
 ! What is the smallest positive number that is evenly divisible by
 ! all of the numbers from 1 to 20?
 
+USE: io
+USE: kernel
 USE: math
 USE: math.functions
 USE: math.ranges
-USE: sequences
 USE: present
-USE: io
+USE: sequences
 IN: euler5
 
 : divisor-any? ( ps n -- ? )
