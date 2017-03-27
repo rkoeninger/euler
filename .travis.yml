@@ -8,3 +8,4 @@ install:
 script:
   - cp -R src/. factor/work
   - ./factor/factor -run=euler1
+  - ./factor/factor -run=euler2

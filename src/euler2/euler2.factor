@@ -4,11 +4,13 @@
 ! By considering the terms in the Fibonacci sequence whose values do not exceed four million,
 ! find the sum of the even-valued terms.
 
+USE: kernel
+USE: io
 USE: math
 USE: math.functions
 USE: math.ranges
 USE: present
-USE: io
+USE: sequences
 IN: euler2
 
 : euler2 ( -- )
