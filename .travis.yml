@@ -8,7 +8,7 @@ install:
   - tar -xf factor-linux-x86-64-0.97.tar.gz
 script:
   - cp -R src/. factor/work
-  - TIMEFORMAT="%E"
+  - TIMEFORMAT="%E seconds"
   - time ./factor/factor -run=euler1
   - time ./factor/factor -run=euler2
   #- time ./factor/factor -run=euler3
