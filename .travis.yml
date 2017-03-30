@@ -20,3 +20,4 @@ script:
   - time ./factor/factor -run=euler7
   - time ./factor/factor -run=euler8
   #- time ./factor/factor -run=euler10
+  #- time ./factor/factor -run=euler11
