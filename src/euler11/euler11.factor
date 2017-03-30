@@ -37,7 +37,7 @@ IN: euler11
 ! TODO: scan every cell expect those in the bottom 3 rows
 ! for each cell, product the numbers in that cell and the lower 3
 : scan-verticals ( m -- x )
-    ;
+    drop 0 ;
 
 : scan-horizontals ( m -- x )
     [
@@ -53,18 +53,22 @@ IN: euler11
 ! TODO: scan every cell expect those in the right 3 cols and bottom 3 rows
 ! for each cell, product the numbers in that cell and the down-right 3
 : scan-diagonals ( m -- x )
-    ;
+    drop 0 ;
 
 ! TODO: scan every cell expect those in the left 3 cols and bottom 3 rows
 ! for each cell, product the numbers in that cell and the down-left 3
 : scan-diagonals-2 ( m -- x )
-    ;
+    drop 0 ;
 
 : euler11 ( -- )
-    grid scan-verticals
-    grid scan-horizontals max
-    grid scan-diagonals max
-    grid scan-diagonals-2 max
+    [
+        [ scan-verticals ]
+        [ scan-horizontals ]
+        [ scan-diagonals ]
+        [ scan-diagonals-2 ]
+    ]
+    [ grid swap call ]
+    map supremum
     present print ;
 
 MAIN: euler11
