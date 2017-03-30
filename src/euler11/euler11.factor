@@ -61,14 +61,15 @@ IN: euler11
     drop 0 ;
 
 : euler11 ( -- )
-    [
+    {
         [ scan-verticals ]
         [ scan-horizontals ]
         [ scan-diagonals ]
         [ scan-diagonals-2 ]
-    ]
-    [ grid swap call ]
-    map supremum
+    }
+    grid
+    [ swap call ]
+    curry map supremum
     present print ;
 
 MAIN: euler11
