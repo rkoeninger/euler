@@ -3,7 +3,7 @@
 USE: io
 USE: kernel
 USE: math
-USE: math.ranges
+USE: math.functions
 USE: present
 USE: sequences
 IN: euler25
