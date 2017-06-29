@@ -35,7 +35,7 @@ IN: euler9
         tri
         answer?
     ]
-    find
+    find drop
     present print ;
 
 MAIN: euler9
