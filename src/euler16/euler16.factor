@@ -8,6 +8,9 @@ USE: present
 USE: sequences
 IN: euler16
 
+: number>digits ( n -- seq )
+    [ dup 0 = not ] [ 10 /mod ] produce reverse! nip ;
+
 : euler16 ( -- )
     2 1000 ^ number>digits sum ;
 
