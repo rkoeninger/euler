@@ -3,7 +3,6 @@
 
 USE: io
 USE: kernel
-USE: lists.lazy
 USE: math
 USE: math.ranges
 USE: present
