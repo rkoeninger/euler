@@ -19,12 +19,21 @@
 USE: io
 USE: kernel
 USE: math
+USE: math.functions
 USE: math.ranges
 USE: present
 USE: sequences
 IN: euler12
 
+: divisors ( x -- n )
+    dup 1 swap [a,b] swap [ swap divisor? ] curry count ;
+
 : euler12 ( -- )
-    ;
+    1 1
+    [ dup divisors 500 < ]
+    [ over + swap 1 + swap ]
+    while
+    nip
+    present print ;
 
 MAIN: euler12
