@@ -25,8 +25,11 @@ USE: present
 USE: sequences
 IN: euler12
 
+! Doesn't work for square numbers or very small values
 : divisors ( x -- n )
-    dup 1 swap [a,b] swap [ swap divisor? ] curry count ;
+    dup sqrt ceiling >integer
+    1 swap [a,b] swap
+    [ swap divisor? ] curry count 2 * ;
 
 : euler12 ( -- )
     1 1

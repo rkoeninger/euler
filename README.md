@@ -17,5 +17,6 @@ All solutions are provided in [Factor](https://factorcode.org/), a dynamically t
 |  9 | [Pythagorean triplet where a + b + c = 1000](https://projecteuler.net/problem=9) | [euler9.factor](https://github.com/rkoeninger/euler/blob/master/src/euler9/euler9.factor) |
 | 10 | [Sum of primes below 2,000,000](https://projecteuler.net/problem=10) | [euler10.factor](https://github.com/rkoeninger/euler/blob/master/src/euler10/euler10.factor) |
 | 11 | [Greatest 4-in-a-row product in grid](https://projecteuler.net/problem=11) | [euler11.factor](https://github.com/rkoeninger/euler/blob/master/src/euler11/euler11.factor) |
+| 12 | [First triangle number with over 500 divisors](https://projecteuler.net/problem=12) | [euler12.factor](https://github.com/rkoeninger/euler/blob/master/src/euler12/euler12.factor) |
 | 16 | [Sum of the digits of 2^1000](https://projecteuler.net/problem=16) | [euler16.factor](https://github.com/rkoeninger/euler/blob/master/src/euler16/euler16.factor) |
 | 25 | [Index of 1st 1000-digit Fibonacci number](https://projecteuler.net/problem=25) | [euler25.factor](https://github.com/rkoeninger/euler/blob/master/src/euler25/euler25.factor) |
