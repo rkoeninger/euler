@@ -25,5 +25,6 @@ script:
   #- time ./factor/factor -run=euler11
   #- time ./factor/factor -run=euler12
   - time ./factor/factor -run=euler13
+  - time ./factor/factor -run=euler14
   - time ./factor/factor -run=euler16
   - time ./factor/factor -run=euler25
