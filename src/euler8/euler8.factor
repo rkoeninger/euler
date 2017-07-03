@@ -45,7 +45,7 @@ IN: euler8
     0 987 [a,b]
     big-number
     [ slice13 multiply ] curry map
-    0 [ max ] reduce
+    supremum
     present print ;
 
 MAIN: euler8
