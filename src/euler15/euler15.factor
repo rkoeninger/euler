@@ -10,7 +10,7 @@ USE: present
 IN: euler15
 
 : euler15 ( -- )
-    40 20 nCr
+    40 20 nCk
     present print ;
 
 MAIN: euler15
