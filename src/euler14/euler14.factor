@@ -3,6 +3,7 @@
 
 USE: io
 USE: kernel
+USE: math
 USE: math.ranges
 USE: present
 USE: sequences
