@@ -1,19 +1,18 @@
-! What is the sum of the digits of the number 2^1000?
+! Find the sum of the digits in the number 100!
 
 USE: io
 USE: kernel
-USE: math
-USE: math.functions
+USE: math.ranges
 USE: present
 USE: sequences
-IN: euler16
+IN: euler20
 
 : number>digits ( n -- seq )
     [ dup 0 = not ] [ 10 /mod ] produce reverse! nip ;
 
-: euler16 ( -- )
-    2 1000 ^
+: euler20 ( -- )
+    1 100 [a,b] product
     number>digits sum
     present print ;
 
-MAIN: euler16
+MAIN: euler20
