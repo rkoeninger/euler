@@ -3,17 +3,16 @@
 USE: io
 USE: kernel
 USE: math
-USE: math.functions
 USE: present
 USE: sequences
 IN: euler16
 
-: number>digits ( n -- seq )
-    [ dup 0 = not ] [ 10 /mod ] produce reverse! nip ;
+: digits ( n -- seq )
+    present [ 48 - ] map ;
 
 : euler16 ( -- )
     2 1000 ^
-    number>digits sum
+    digits sum
     present print ;
 
 MAIN: euler16
