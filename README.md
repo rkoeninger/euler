@@ -22,5 +22,5 @@ All solutions are provided in [Factor](https://factorcode.org/), a dynamically t
 | 14 | [Longest Collatz sequence starting under 1,000,000](https://projecteuler.net/problem=14) | [euler14.factor](https://github.com/rkoeninger/euler/blob/master/src/euler14/euler14.factor) |
 | 15 | [Number of unique paths across a grid](https://projecteuler.net/problem=15) | [euler15.factor](https://github.com/rkoeninger/euler/blob/master/src/euler15/euler15.factor) |
 | 16 | [Sum of the digits of 2^1000](https://projecteuler.net/problem=16) | [euler16.factor](https://github.com/rkoeninger/euler/blob/master/src/euler16/euler16.factor) |
-| 16 | [Sum of the digits of 100!](https://projecteuler.net/problem=20) | [euler20.factor](https://github.com/rkoeninger/euler/blob/master/src/euler20/euler20.factor) |
+| 20 | [Sum of the digits of 100!](https://projecteuler.net/problem=20) | [euler20.factor](https://github.com/rkoeninger/euler/blob/master/src/euler20/euler20.factor) |
 | 25 | [Index of 1st 1000-digit Fibonacci number](https://projecteuler.net/problem=25) | [euler25.factor](https://github.com/rkoeninger/euler/blob/master/src/euler25/euler25.factor) |
