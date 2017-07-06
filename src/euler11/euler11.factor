@@ -10,6 +10,7 @@ USE: present
 USE: sequences
 IN: euler11
 
+! 20 x 20
 : grid ( -- m )
     {
         { 08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08 }
@@ -34,6 +35,24 @@ IN: euler11
         { 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48 }
     } ;
 
+: @ ( grid j i -- x )
+    rot nth nth ;
+
+: 2seq ( x y -- seq )
+    { } swap prefix swap prefix ;
+
+: 2split ( seq -- x y )
+    [ first ] [ second ] bi ;
+
+! coords [ grid swap 2split @ ] map product
+
+! 20 iota
+! 20 iota
+! [ 2seq ] cartesian-map
+! [ 1 1 extrude ] map
+
+! : extrude ( xs di dj -- ys )
+
 ! TODO: scan every cell expect those in the bottom 3 rows
 ! for each cell, product the numbers in that cell and the lower 3
 : scan-verticals ( m -- x )
@@ -46,9 +65,9 @@ IN: euler11
         [
             [ dup 4 + ] dip <slice> product
         ]
-        curry map supremum
+        curry supremum-by
     ]
-    map supremum ;
+    supremum-by ;
 
 ! TODO: scan every cell expect those in the right 3 cols and bottom 3 rows
 ! for each cell, product the numbers in that cell and the down-right 3
