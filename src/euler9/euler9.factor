@@ -9,32 +9,32 @@ USE: present
 USE: sequences
 IN: euler9
 
-: triplet? ( a b c -- ? )
-    sq swap sq + swap sq = ;
+: goal? ( a b c -- ? )
+    [ sq swap sq + swap sq = ]
+    [ + + 1000 = ]
+    3bi and ;
 
-: sum1000? ( a b c -- ? )
-    + + 1000 = ;
-
-: answer? ( a b c -- ? )
-    [ triplet? ] [ sum1000? ] bi and ;
-
-: search-space ( -- xsss )
-    500 iota
-    500 iota
-    500 iota
-    cartesian-product concat
-    swap [ prefix ] cartesian-map concat ;
+: inc ( a b c -- a' b' c' )
+    1 +
+    dup 500 >=
+    [
+        drop 1
+        [ 1 + ] dip
+        over 500 >=
+        [
+            [ drop 1 ] dip
+            [ 1 + ] 2dip
+        ]
+        when
+    ]
+    when ;
 
 : euler9 ( -- )
-    search-space
-    [
-        [ first ]
-        [ second ]
-        [ third ]
-        tri
-        answer?
-    ]
-    find drop
+    1 1 1
+    [ 3dup goal? not ]
+    [ inc ]
+    while
+    * *
     present print ;
 
 MAIN: euler9
