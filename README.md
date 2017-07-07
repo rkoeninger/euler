@@ -24,3 +24,4 @@ All solutions are provided in [Factor](https://factorcode.org/), a dynamically t
 | 16 | [Sum of the digits of 2^1000](https://projecteuler.net/problem=16) | [euler16.factor](https://github.com/rkoeninger/euler/blob/master/src/euler16/euler16.factor) |
 | 20 | [Sum of the digits of 100!](https://projecteuler.net/problem=20) | [euler20.factor](https://github.com/rkoeninger/euler/blob/master/src/euler20/euler20.factor) |
 | 25 | [Index of 1st 1000-digit Fibonacci number](https://projecteuler.net/problem=25) | [euler25.factor](https://github.com/rkoeninger/euler/blob/master/src/euler25/euler25.factor) |
+| 30 | [Sum of numbers equal to sum of each digit to 5th power](https://projecteuler.net/problem=30) | [euler30.factor](https://github.com/rkoeninger/euler/blob/master/src/euler30/euler30.factor) |
