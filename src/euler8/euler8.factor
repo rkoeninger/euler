@@ -1,13 +1,11 @@
 ! Find the 13 consecutive digits with the largest
 ! product in the 1000 digit number below
 
-USE: io
 USE: kernel
 USE: math
-USE: math.order
 USE: math.parser
 USE: math.ranges
-USE: present
+USE: prettyprint
 USE: regexp
 USE: sequences
 IN: euler8
@@ -38,14 +36,10 @@ IN: euler8
 : slice13 ( n xs -- ys )
     swap dup 13 + rot <slice> ;
 
-: multiply ( s -- x )
-    [ digit> ] map product ;
-
 : euler8 ( -- )
     0 987 [a,b]
     big-number
-    [ slice13 multiply ] curry map
-    supremum
-    present print ;
+    [ slice13 string>digits product ] curry map
+    supremum . ;
 
 MAIN: euler8
