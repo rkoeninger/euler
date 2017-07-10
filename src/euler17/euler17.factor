@@ -59,8 +59,7 @@ IN: euler17
     swap
     100 >=
     [ "and" length + ]
-    when
-    + ;
+    when ;
 
 : euler17 ( -- )
     1000 [1,b]
