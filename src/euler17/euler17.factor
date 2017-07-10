@@ -12,12 +12,12 @@ IN: euler17
 : one ( x -- n )
     10 mod
     { "" "one" "two" "three" "four" "five" "six" "seven" "eight" "nine" }
-    nth length ;
+    nth ;
 
 : teen ( x -- n )
-    100 mod 10 /i
+    10 mod
     { "ten" "eleven" "twelve" "thirteen" "fourteen" "fifteen" "sixteen" "seventeen" "eigtheen" "nineteen" }
-    nth length ;
+    nth ;
 
 : under-twenty ( x -- n )
     dup 10 <
@@ -29,8 +29,7 @@ IN: euler17
     100 mod 10 /mod one
     swap
     { "" "" "twenty" "thirty" "forty" "fifty" "sixty" "seventy" "eighty" "ninety" }
-    nth length
-    + ;
+    nth append ;
 
 : tens ( x -- n )
     dup 100 mod 10 /i 2 <
@@ -41,29 +40,29 @@ IN: euler17
 : hundred ( x -- n )
     1000 mod 100 /i
     one
-    dup 0 >
-    [ "hundred" length + ]
+    dup length 0 >
+    [ "hundred" append ]
     when ;
 
 : thousand ( x -- n )
     1000 >=
-    [ "one" length "thousand" length + ]
-    [ 0 ]
+    [ "one" "thousand" append ]
+    [ "" ]
     if ;
 
 : letters ( x -- n )
     dup [ 100 >= ] [ 100 divisor? not ] bi and
-    [ "and" length ]
-    [ 0 ]
+    [ "and" ]
+    [ "" ]
     if
     swap
     [ thousand ]
     [ hundred ]
     [ tens ]
-    tri + + + ;
+    tri append append append ;
 
 : euler17 ( -- )
     1000 [1,b]
-    [ letters ] map sum . ;
+    [ letters ] map concat length . ;
 
 MAIN: euler17
