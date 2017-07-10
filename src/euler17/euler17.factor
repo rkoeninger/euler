@@ -62,7 +62,7 @@ IN: euler17
     when ;
 
 : euler17 ( -- )
-    1000 [a,b]
+    1000 [1,b]
     [ letters ] map sum . ;
 
 MAIN: euler17
