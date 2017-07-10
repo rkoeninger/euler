@@ -1,4 +1,4 @@
-! Find the first 1000-digit Fibonacci number.
+! Find the index of the first 1000-digit Fibonacci number.
 
 USE: kernel
 USE: math
