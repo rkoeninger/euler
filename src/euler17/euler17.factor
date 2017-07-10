@@ -15,7 +15,7 @@ IN: euler17
     nth length ;
 
 : teen ( x -- n )
-    10 /i
+    100 mod 10 /i
     { "ten" "eleven" "twelve" "thirteen" "fourteen" "fifteen" "sixteen" "seventeen" "eigtheen" "nineteen" }
     nth length ;
 
