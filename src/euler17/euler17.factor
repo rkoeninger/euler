@@ -41,8 +41,9 @@ IN: euler17
     1000 mod 100 /i
     one
     dup 0 >
-    [ "hundred" length + ]
-    when ;
+    [ "hundred" length ]
+    [ 0 ]
+    if + ;
 
 : thousand ( x -- n )
     1000 >=
