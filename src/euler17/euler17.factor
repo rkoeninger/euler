@@ -41,9 +41,8 @@ IN: euler17
     1000 mod 100 /i
     one
     dup 0 >
-    [ "hundred" length ]
-    [ 0 ]
-    if + ;
+    [ "hundred" length + ]
+    when ;
 
 : thousand ( x -- n )
     1000 >=
@@ -59,7 +58,7 @@ IN: euler17
     tri + +
     swap
     100 >=
-    [ "and" length ]
+    [ "and" length + ]
     when ;
 
 : euler17 ( -- )
