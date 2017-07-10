@@ -3,6 +3,7 @@
 
 USE: kernel
 USE: math
+USE: math.functions
 USE: math.ranges
 USE: prettyprint
 USE: sequences
@@ -51,15 +52,15 @@ IN: euler17
     if ;
 
 : letters ( x -- n )
-    dup
+    dup [ 100 >= ] [ 100 divisor? not ] bi and
+    [ "and" length ]
+    [ 0 ]
+    if
+    swap
     [ thousand ]
     [ hundred ]
     [ tens ]
-    tri + +
-    swap
-    100 >=
-    [ "and" length + ]
-    when ;
+    tri + + + ;
 
 : euler17 ( -- )
     1000 [1,b]
