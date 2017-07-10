@@ -16,27 +16,26 @@
 
 ! What is the value of the first triangle number to have over five hundred divisors?
 
-USE: io
 USE: kernel
 USE: math
 USE: math.functions
 USE: math.ranges
-USE: present
+USE: prettyprint
 USE: sequences
 IN: euler12
 
-! Doesn't work for square numbers or very small values
+: triangle ( x -- y )
+    dup 1 + * 2 / ;
+
 : divisors ( x -- n )
-    dup sqrt ceiling >integer
-    1 swap [a,b] swap
-    [ swap divisor? ] curry count 2 * ;
+    dup sqrt floor >integer
+    dup sq swapd dupd = [ -1 ] [ 0 ] if
+    rot [1,b] swapd swap
+    [ swap divisor? ] curry count 2 * + ;
 
 : euler12 ( -- )
-    1 1
-    [ dup divisors 500 < ]
-    [ over + swap 1 + swap ]
-    while
-    nip
-    present print ;
+    100000 [1,b]
+    [ triangle ] map
+    [ divisors 500 > ] find nip . ;
 
 MAIN: euler12
