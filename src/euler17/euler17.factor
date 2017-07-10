@@ -26,7 +26,7 @@ IN: euler17
     if ;
 
 : over-twenty ( x -- n )
-    10 /mod one
+    100 mod 10 /mod one
     swap
     { "" "" "twenty" "thirty" "forty" "fifty" "sixty" "seventy" "eighty" "ninety" }
     nth length
