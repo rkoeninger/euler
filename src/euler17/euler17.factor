@@ -50,7 +50,7 @@ IN: euler17
     if ;
 
 : letters ( x -- n )
-	dup
+    dup
     [ thousand ]
     [ hundred ]
     [ tens ]
