@@ -21,8 +21,8 @@ IN: euler17
 
 : under-twenty ( x -- n )
     dup 10 <
-    [ dup one ]
-    [ dup teen ]
+    [ one ]
+    [ teen ]
     if ;
 
 : over-twenty ( x -- n )
