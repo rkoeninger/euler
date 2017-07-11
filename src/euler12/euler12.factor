@@ -28,7 +28,7 @@ IN: euler12
     dup 1 + * 2 / ;
 
 : divisors ( x -- n )
-    dup sqrt floor >integer
+    dup sqrt >integer
     dup sq swapd dupd = [ -1 ] [ 0 ] if
     rot [1,b] swapd swap
     [ swap divisor? ] curry count 2 * + ;
