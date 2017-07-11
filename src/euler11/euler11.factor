@@ -1,12 +1,11 @@
 ! Find the greatest product of four colinear numbers
 ! (up, down, left, right, or diagonally) in the grid below?
 
-USE: io
 USE: kernel
 USE: math
 USE: math.order
 USE: math.ranges
-USE: present
+USE: prettyprint
 USE: sequences
 IN: euler11
 
@@ -88,7 +87,6 @@ IN: euler11
     }
     grid
     [ swap call ]
-    curry map supremum
-    present print ;
+    curry map supremum . ;
 
 MAIN: euler11
