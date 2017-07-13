@@ -5,22 +5,19 @@
 ! find the sum of the even-valued terms.
 
 USE: kernel
-USE: io
 USE: math
-USE: math.functions
-USE: math.ranges
-USE: present
-USE: sequences
+USE: prettyprint
 IN: euler2
 
 : euler2 ( -- )
-    { 0 1 }
-    [ dup last 4000000 < ]
-    [ dup 2 tail* sum suffix ]
-    while
-    but-last
-    [ even? ] filter
-    sum
-    present print ;
+    0 0 1
+    [ dup 4000000 < ]
+    [
+        swap over +
+        dup even?
+        [ dup [ + ] curry 2dip ]
+        when
+    ]
+    while 2drop . ;
 
 MAIN: euler2
