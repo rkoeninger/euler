@@ -4,6 +4,7 @@
 ! quadratic expression that produces the maximum number of
 ! primes for consecutive values of nn, starting with n=0n=0.
 
+USE: accessors
 USE: kernel
 USE: locals
 USE: math
@@ -31,9 +32,14 @@ IN: euler27
     } ; inline
 
 :: prime? ( x -- ? )
-    primes
-    [ x < ] filter
-    [ x swap divisor? ] any? not ;
+    x 0 <
+    [ f ]
+    [
+        primes
+        [ x < ] filter
+        [ x swap divisor? ] any? not
+    ]
+    if ;
 
 : quad ( b a n -- x )
     dup 2 ^ -rot * + + ;
