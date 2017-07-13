@@ -29,3 +29,4 @@ All solutions are provided in [Factor](https://factorcode.org/), a dynamically t
 | 25 | [Index of 1st 1000-digit Fibonacci number](https://projecteuler.net/problem=25) | [euler25.factor](https://github.com/rkoeninger/euler/blob/master/src/euler25/euler25.factor) |
 | 30 | [Sum of numbers equal to sum of each digit to 5th power](https://projecteuler.net/problem=30) | [euler30.factor](https://github.com/rkoeninger/euler/blob/master/src/euler30/euler30.factor) |
 | 48 | [Last 10 digits of n^n, n = \[1..1000\]](https://projecteuler.net/problem=48) | [euler48.factor](https://github.com/rkoeninger/euler/blob/master/src/euler48/euler48.factor) |
+| 97 | [Last 10 digits of (28433×(2^7830457))+1](https://projecteuler.net/problem=97) | [euler97.factor](https://github.com/rkoeninger/euler/blob/master/src/euler97/euler97.factor) |
