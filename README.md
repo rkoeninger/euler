@@ -23,11 +23,12 @@ All solutions are provided in [Factor](https://factorcode.org/), a dynamically t
 | 15 | [Number of unique paths across a grid](https://projecteuler.net/problem=15) | [euler15.factor](https://github.com/rkoeninger/euler/blob/master/src/euler15/euler15.factor) |
 | 16 | [Sum of the digits of 2^1000](https://projecteuler.net/problem=16) | [euler16.factor](https://github.com/rkoeninger/euler/blob/master/src/euler16/euler16.factor) |
 | 17 | [Count of letters used to represent \[1..1000\]](https://projecteuler.net/problem=17) | [euler17.factor](https://github.com/rkoeninger/euler/blob/master/src/euler17/euler17.factor) |
-| 18 | [Max value path through triangluar grid](https://projecteuler.net/problem=18) | [euler18.factor](https://github.com/rkoeninger/euler/blob/master/src/euler18/euler18.factor) |
+| 18 | [Max value path through 15-row triangluar grid](https://projecteuler.net/problem=18) | [euler18.factor](https://github.com/rkoeninger/euler/blob/master/src/euler18/euler18.factor) |
 | 19 | [Count of Sundays in 20th century](https://projecteuler.net/problem=19) | [euler19.factor](https://github.com/rkoeninger/euler/blob/master/src/euler19/euler19.factor) |
 | 20 | [Sum of the digits of 100!](https://projecteuler.net/problem=20) | [euler20.factor](https://github.com/rkoeninger/euler/blob/master/src/euler20/euler20.factor) |
 | 25 | [Index of 1st 1000-digit Fibonacci number](https://projecteuler.net/problem=25) | [euler25.factor](https://github.com/rkoeninger/euler/blob/master/src/euler25/euler25.factor) |
 | 27 | [Product of coefficients of quadratic with greatest number of primes](https://projecteuler.net/problem=27) | [euler27.factor](https://github.com/rkoeninger/euler/blob/master/src/euler27/euler27.factor) |
 | 30 | [Sum of numbers equal to sum of each digit to 5th power](https://projecteuler.net/problem=30) | [euler30.factor](https://github.com/rkoeninger/euler/blob/master/src/euler30/euler30.factor) |
 | 48 | [Last 10 digits of n^n, n = \[1..1000\]](https://projecteuler.net/problem=48) | [euler48.factor](https://github.com/rkoeninger/euler/blob/master/src/euler48/euler48.factor) |
+| 67 | [Max value path through 100-row triangluar grid](https://projecteuler.net/problem=67) | [euler67.factor](https://github.com/rkoeninger/euler/blob/master/src/euler67/euler67.factor) |
 | 97 | [Last 10 digits of (28433×(2^7830457))+1](https://projecteuler.net/problem=97) | [euler97.factor](https://github.com/rkoeninger/euler/blob/master/src/euler97/euler97.factor) |
