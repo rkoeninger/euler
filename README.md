@@ -27,6 +27,7 @@ All solutions are provided in [Factor](https://factorcode.org/), a dynamically t
 | 19 | [Count of Sundays in 20th century](https://projecteuler.net/problem=19) | [euler19.factor](https://github.com/rkoeninger/euler/blob/master/src/euler19/euler19.factor) |
 | 20 | [Sum of the digits of 100!](https://projecteuler.net/problem=20) | [euler20.factor](https://github.com/rkoeninger/euler/blob/master/src/euler20/euler20.factor) |
 | 21 | [Sum of amicable numbers under 10,000](https://projecteuler.net/problem=21) | [euler21.factor](https://github.com/rkoeninger/euler/blob/master/src/euler21/euler21.factor) |
+| 24 | [1,000,000th lexicographic permutation of 0,1,2,3,4,5,6,7,8,9](https://projecteuler.net/problem=24) | [euler24.factor](https://github.com/rkoeninger/euler/blob/master/src/euler24/euler24.factor) |
 | 25 | [Index of 1st 1000-digit Fibonacci number](https://projecteuler.net/problem=25) | [euler25.factor](https://github.com/rkoeninger/euler/blob/master/src/euler25/euler25.factor) |
 | 27 | [Product of coefficients of quadratic with greatest number of primes](https://projecteuler.net/problem=27) | [euler27.factor](https://github.com/rkoeninger/euler/blob/master/src/euler27/euler27.factor) |
 | 30 | [Sum of numbers equal to sum of each digit to 5th power](https://projecteuler.net/problem=30) | [euler30.factor](https://github.com/rkoeninger/euler/blob/master/src/euler30/euler30.factor) |
