@@ -8,7 +8,7 @@ All solutions are provided in [Factor](https://factorcode.org/), a dynamically t
 |----|------------|------|
 |  1 | [Sum of multiples of 3 or 5 < 1000](https://projecteuler.net/problem=1) | [euler1.factor](https://github.com/rkoeninger/euler/blob/master/src/euler1/euler1.factor) |
 |  2 | [Sum of even Fibonacci numbers < 4,000,000](https://projecteuler.net/problem=2) | [euler2.factor](https://github.com/rkoeninger/euler/blob/master/src/euler2/euler2.factor) |
-|  3 | [Largest prime factor of 600851475143](https://projecteuler.net/problem=3) | [euler3.factor](https://github.com/rkoeninger/euler/blob/master/src/euler3/euler3.factor) |
+|  3 | [Largest prime factor of 600,851,475,143](https://projecteuler.net/problem=3) | [euler3.factor](https://github.com/rkoeninger/euler/blob/master/src/euler3/euler3.factor) |
 |  4 | [Largest palindrome product of \[100..999\] * \[100..999\]](https://projecteuler.net/problem=4) | [euler4.factor](https://github.com/rkoeninger/euler/blob/master/src/euler4/euler4.factor) |
 |  5 | [Lowest common multiple of \[1..20\]](https://projecteuler.net/problem=5) | [euler5.factor](https://github.com/rkoeninger/euler/blob/master/src/euler5/euler5.factor) |
 |  6 | [\(Square of sum - sum of squares\) of \[1..100\]](https://projecteuler.net/problem=6) | [euler6.factor](https://github.com/rkoeninger/euler/blob/master/src/euler6/euler6.factor) |
@@ -26,6 +26,7 @@ All solutions are provided in [Factor](https://factorcode.org/), a dynamically t
 | 18 | [Max value path through 15-row triangluar grid](https://projecteuler.net/problem=18) | [euler18.factor](https://github.com/rkoeninger/euler/blob/master/src/euler18/euler18.factor) |
 | 19 | [Count of Sundays in 20th century](https://projecteuler.net/problem=19) | [euler19.factor](https://github.com/rkoeninger/euler/blob/master/src/euler19/euler19.factor) |
 | 20 | [Sum of the digits of 100!](https://projecteuler.net/problem=20) | [euler20.factor](https://github.com/rkoeninger/euler/blob/master/src/euler20/euler20.factor) |
+| 21 | [Sum of amicable numbers under 10,000](https://projecteuler.net/problem=21) | [euler21.factor](https://github.com/rkoeninger/euler/blob/master/src/euler21/euler21.factor) |
 | 25 | [Index of 1st 1000-digit Fibonacci number](https://projecteuler.net/problem=25) | [euler25.factor](https://github.com/rkoeninger/euler/blob/master/src/euler25/euler25.factor) |
 | 27 | [Product of coefficients of quadratic with greatest number of primes](https://projecteuler.net/problem=27) | [euler27.factor](https://github.com/rkoeninger/euler/blob/master/src/euler27/euler27.factor) |
 | 30 | [Sum of numbers equal to sum of each digit to 5th power](https://projecteuler.net/problem=30) | [euler30.factor](https://github.com/rkoeninger/euler/blob/master/src/euler30/euler30.factor) |
