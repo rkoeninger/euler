@@ -8,16 +8,18 @@
 
 ! What is the millionth permutation of {0,1,2,3,4,5,6,7,8,9}?
 
+USE: io
 USE: math.combinatorics
+USE: math.parser
 USE: math.ranges
-USE: prettyprint
 USE: sequences
 IN: euler24
 
 : euler24 ( -- )
-    999999
     10 [0,b)
     all-permutations
-    nth . ;
+    999999 swap nth
+    [ number>string ] map concat
+    print ;
 
 MAIN: euler24
