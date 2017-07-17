@@ -11,6 +11,7 @@
 
 USE: kernel
 USE: math.functions
+USE: math.ranges
 USE: prettyprint
 USE: sequences
 IN: euler21
