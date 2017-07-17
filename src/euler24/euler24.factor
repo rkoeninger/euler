@@ -9,6 +9,7 @@
 ! What is the millionth permutation of {0,1,2,3,4,5,6,7,8,9}?
 
 USE: io
+USE: kernel
 USE: math.combinatorics
 USE: math.parser
 USE: math.ranges
