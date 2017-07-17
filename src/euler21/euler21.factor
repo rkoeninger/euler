@@ -22,10 +22,13 @@ IN: euler21
     filter sum ;
 
 : amicable? ( x -- ? )
-    dup divisors divisors = ;
+    dup divisors
+    [ = not ]
+    [ divisors = ]
+    2bi and ;
 
 : euler21 ( -- )
-    10000 [1,b)
+    2 10000 [a,b)
     [ amicable? ] filter
     sum . ;
 
