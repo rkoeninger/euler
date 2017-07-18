@@ -18,6 +18,7 @@
 ! the sum of two abundant numbers.
 
 USE: kernel
+USE: math
 USE: math.functions
 USE: math.ranges
 USE: prettyprint
