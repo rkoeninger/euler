@@ -18,6 +18,7 @@
 ! the sum of two abundant numbers.
 
 USE: kernel
+USE: locals
 USE: math
 USE: math.functions
 USE: math.ranges
