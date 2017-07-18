@@ -4,6 +4,7 @@
 USE: kernel
 USE: locals
 USE: math
+USE: math.order
 USE: math.ranges
 USE: prettyprint
 USE: sequences
@@ -55,53 +56,46 @@ IN: euler11
         { 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48 }
     } [ >pair< ] dip nth nth ;
 
-! { } 4 7 <pair> suffix 1 -1 <pair> extrude .
-
-! coords [ grid swap 2split @ ] map product
-
-! 20 iota
-! 20 iota
-! [ 2seq ] cartesian-map
-! [ 1 1 extrude ] map
-
-! : extrude ( xs di dj -- ys )
+: colinear-product ( ps -- k )
+    [ @ ] map product ;
 
 ! TODO: scan every cell expect those in the bottom 3 rows
 ! for each cell, product the numbers in that cell and the lower 3
-: scan-verticals ( m -- x )
-    drop 0 ;
+: scan-verticals ( -- x )
+    0 16 [a,b]
+    0 19 [a,b]
+    [ <pair> 1 0 <pair> extrude colinear-product ] cartesian-map
+    concat supremum ;
 
-: scan-horizontals ( m -- x )
-    [
-        dup length [0,b) 3 head*
-        swap
-        [
-            [ dup 4 + ] dip <slice> product
-        ]
-        curry supremum-by
-    ]
-    supremum-by ;
+! TODO: scan every cell expect those in the right 3 cols
+! for each cell, product the numbers in that cell and the right 3
+: scan-horizontals ( -- x )
+    0 19 [a,b]
+    0 16 [a,b]
+    [ <pair> 0 1 <pair> extrude colinear-product ] cartesian-map
+    concat supremum ;
 
 ! TODO: scan every cell expect those in the right 3 cols and bottom 3 rows
 ! for each cell, product the numbers in that cell and the down-right 3
-: scan-diagonals ( m -- x )
-    drop 0 ;
-! 16 [0,b] dup cartesian-product concat .
+: scan-diagonals ( -- x )
+    0 16 [a,b]
+    0 16 [a,b]
+    [ <pair> 1 1 <pair> extrude colinear-product ] cartesian-map
+    concat supremum ;
 
 ! TODO: scan every cell expect those in the left 3 cols and bottom 3 rows
 ! for each cell, product the numbers in that cell and the down-left 3
-: scan-diagonals-2 ( m -- x )
-    drop 0 ;
+: scan-diagonals-2 ( -- x )
+    3 19 [a,b] reverse
+    0 16 [a,b]
+    [ <pair> -1 1 <pair> extrude colinear-product ] cartesian-map
+    concat supremum ;
 
 : euler11 ( -- )
-    {
-        [ scan-verticals ]
-        [ scan-horizontals ]
-        [ scan-diagonals ]
-        [ scan-diagonals-2 ]
-    }
-    grid
-    [ swap call ]
-    curry map supremum . ;
+    scan-verticals
+    scan-horizontals
+    scan-diagonals
+    scan-diagonals-2
+    max max max . ;
 
 MAIN: euler11
