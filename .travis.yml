@@ -11,7 +11,6 @@ install:
 script:
   - cp -R src/. factor/work
   - TIMEFORMAT="%E seconds"
-  - echo "Expected answers - https://github.com/nayuki/Project-Euler-solutions/blob/master/Answers.txt"
   - time ./factor/factor -run=euler1
   - time ./factor/factor -run=euler2
   - time ./factor/factor -run=euler3

@@ -4,6 +4,8 @@
 
 All solutions are provided in [Factor](https://factorcode.org/), a dynamically typed, stack-oriented, concatenative language that offers a different perspective on functional programming.
 
+Solutions to several problems are listed by GitHub user nayuki [here](https://github.com/nayuki/Project-Euler-solutions/blob/master/Answers.txt).
+
 | #  | Descripion | Code |
 |----|------------|------|
 |  1 | [Sum of multiples of 3 or 5 < 1000](https://projecteuler.net/problem=1) | [euler1.factor](https://github.com/rkoeninger/euler/blob/master/src/euler1/euler1.factor) |
