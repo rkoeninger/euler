@@ -139,7 +139,7 @@ IN: euler67
 ! need to figure out how to refer to table
 ! locals?
 
-:: visit ( g j i -- )
+:: visit ( g i j -- )
     j i 1 + g nth nth
     j 1 + i 1 + g nth nth
     max
@@ -147,23 +147,22 @@ IN: euler67
     +
     j i g nth set-nth ;
 
-: visit' ( t j i -- )
-    2dup
-    2dup 1 +
-    2dup [ 1 + ] dip
-    [ here ] 2bi@
-    max
-    here +
-    set-nth ;
-
 ! 5 [0,b) reverse [ dup [0,b] [ over . . ] each ] each clear
+
+! : triangle ( -- g ) { { 3 } { 7 4 } { 2 4 6 } { 8 5 9 3 } } ;
+
+! triangle dup 0 2 visit dup 1 2 visit dup 2 2 visit dup 0 1 visit dup 1 1 visit dup 0 0 visit [ . ] each
 
 : euler67 ( -- )
     triangle
     14 [0,b) reverse
     [
         dup [0,b]
-        [ over visit ] each
-    ] each ;
+        [
+            2drop
+        ]
+        each
+    ]
+    each ;
 
 MAIN: euler67
