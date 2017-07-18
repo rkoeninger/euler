@@ -20,6 +20,7 @@ IN: euler17
     nth ;
 
 : under-twenty ( x -- n )
+    100 mod
     dup 10 <
     [ one ]
     [ teen ]
