@@ -34,19 +34,20 @@ IN: euler23
 : abundant? ( x -- ? )
     dup divisor-sum < ;
 
-:: not-sum-of-abundant? ( as x -- ? )
+:: sum-of-abundant? ( as x -- ? )
     x 2 / [1,b]
     [
         [ as nth ]
         [ x swap - as nth ]
         bi and
     ]
-    any? not ;
+    any? ;
 
 : euler23 ( -- )
     28123 [1,b]
     dup [ abundant? ] map
-    swap [ dupd not-sum-of-abundant? ] filter
-    sum . drop ;
+    f prefix
+    [ swap sum-of-abundant? not ] curry filter
+    sum . ;
 
 MAIN: euler23
