@@ -153,6 +153,8 @@ IN: euler67
 
 ! triangle dup 0 2 visit dup 1 2 visit dup 2 2 visit dup 0 1 visit dup 1 1 visit dup 0 0 visit [ . ] each
 
+! :: visit* ( g -- ) 14 [0,b) reverse [ dup [0,b] [ dupd g -rot visit ] each ] each ;
+
 : euler67 ( -- )
     triangle
     14 [0,b) reverse
