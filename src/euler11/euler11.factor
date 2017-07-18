@@ -2,15 +2,36 @@
 ! (up, down, left, right, or diagonally) in the grid below?
 
 USE: kernel
+USE: locals
 USE: math
-USE: math.order
 USE: math.ranges
 USE: prettyprint
 USE: sequences
 IN: euler11
 
+: <pair> ( x y -- p )
+    swap { }
+    swap suffix
+    swap suffix ;
+
+: >pair< ( p -- x y )
+    [ first ]
+    [ second ]
+    bi ;
+
+: pair+ ( p q -- r )
+    [ + ] 2map ;
+
+:: extrude ( p d -- qs )
+    { } p suffix
+    3
+    [
+        dup last d pair+ suffix
+    ]
+    times ;
+
 ! 20 x 20
-: grid ( -- m )
+: @ ( p -- x )
     {
         { 08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08 }
         { 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00 }
@@ -32,16 +53,9 @@ IN: euler11
         { 20 69 36 41 72 30 23 88 34 62 99 69 82 67 59 85 74 04 36 16 }
         { 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54 }
         { 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48 }
-    } ;
+    } [ >pair< ] dip nth nth ;
 
-: @ ( grid j i -- x )
-    rot nth nth ;
-
-: 2seq ( x y -- seq )
-    { } swap prefix swap prefix ;
-
-: 2split ( seq -- x y )
-    [ first ] [ second ] bi ;
+! { } 4 7 <pair> suffix 1 -1 <pair> extrude .
 
 ! coords [ grid swap 2split @ ] map product
 
@@ -72,6 +86,7 @@ IN: euler11
 ! for each cell, product the numbers in that cell and the down-right 3
 : scan-diagonals ( m -- x )
     drop 0 ;
+! 16 [0,b] dup cartesian-product concat .
 
 ! TODO: scan every cell expect those in the left 3 cols and bottom 3 rows
 ! for each cell, product the numbers in that cell and the down-left 3
