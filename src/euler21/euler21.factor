@@ -16,15 +16,15 @@ USE: prettyprint
 USE: sequences
 IN: euler21
 
-: divisors ( x -- n )
+: divisor-sum ( x -- n )
     dup [1,b)
     swap [ swap divisor? ] curry
     filter sum ;
 
 : amicable? ( x -- ? )
-    dup divisors
+    dup divisor-sum
     [ = not ]
-    [ divisors = ]
+    [ divisor-sum = ]
     2bi and ;
 
 : euler21 ( -- )
