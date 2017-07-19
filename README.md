@@ -29,6 +29,7 @@ Solutions to several problems are listed by GitHub user nayuki [here](https://gi
 | 19 | [Count of Sundays in 20th century](https://projecteuler.net/problem=19) | [euler19.factor](https://github.com/rkoeninger/euler/blob/master/src/euler19/euler19.factor) |
 | 20 | [Sum of the digits of 100!](https://projecteuler.net/problem=20) | [euler20.factor](https://github.com/rkoeninger/euler/blob/master/src/euler20/euler20.factor) |
 | 21 | [Sum of amicable numbers under 10,000](https://projecteuler.net/problem=21) | [euler21.factor](https://github.com/rkoeninger/euler/blob/master/src/euler21/euler21.factor) |
+| 22 | [Sum of scores of first names based on characters, sorted position](https://projecteuler.net/problem=22) | [euler22.factor](https://github.com/rkoeninger/euler/blob/master/src/euler22/euler22.factor) |
 | 23 | [Sum of positive numbers that are not sum of two abundant numbers](https://projecteuler.net/problem=23) | [euler23.factor](https://github.com/rkoeninger/euler/blob/master/src/euler23/euler23.factor) |
 | 24 | [1,000,000th lexicographic permutation of 0,1,2,3,4,5,6,7,8,9](https://projecteuler.net/problem=24) | [euler24.factor](https://github.com/rkoeninger/euler/blob/master/src/euler24/euler24.factor) |
 | 25 | [Index of 1st 1000-digit Fibonacci number](https://projecteuler.net/problem=25) | [euler25.factor](https://github.com/rkoeninger/euler/blob/master/src/euler25/euler25.factor) |
