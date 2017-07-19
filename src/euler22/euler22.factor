@@ -15,6 +15,7 @@ USE: kernel
 USE: io.encodings.utf8
 USE: math
 USE: math.order
+USE: prettyprint
 USE: sequences
 USE: sorting
 IN: euler22
