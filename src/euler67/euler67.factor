@@ -8,22 +8,6 @@
 
 ! Find the maximum total from top to bottom of the 100-row triangle below:
 
-!		var grid = new []
-!		{
-!			new [] { 3 },
-!			new [] { 7, 4 },
-!			new [] { 2, 4, 6 },
-!			new [] { 8, 5, 9, 3 },
-!		};
-!		for (var i = 2; i >= 0; --i)
-!		{
-!			for (var j = 0; j <= i; ++j)
-!			{
-!				grid[i][j] += Math.Max(grid[i + 1][j], grid[i + 1][j + 1]);
-!			}
-!		}
-!		Console.WriteLine(grid[0][0]);
-
 USE: kernel
 USE: locals
 USE: math
@@ -136,10 +120,7 @@ IN: euler67
         { 23 33 44 81 80 92 93 75 94 88 23 61 39 76 22 03 28 94 32 06 49 65 41 34 18 23 08 47 62 60 03 63 33 13 80 52 31 54 73 43 70 26 16 69 57 87 83 31 03 93 70 81 47 95 77 44 29 68 39 51 56 59 63 07 25 70 07 77 43 53 64 03 94 42 95 39 18 01 66 21 16 97 20 50 90 16 70 10 95 69 29 06 25 61 41 26 15 59 63 35 }
     } ;
 
-! need to figure out how to refer to table
-! locals?
-
-:: visit ( g i j -- )
+:: visit ( j i g -- )
     j i 1 + g nth nth
     j 1 + i 1 + g nth nth
     max
@@ -147,24 +128,14 @@ IN: euler67
     +
     j i g nth set-nth ;
 
-! 5 [0,b) reverse [ dup [0,b] [ over . . ] each ] each clear
-
-! : triangle ( -- g ) { { 3 } { 7 4 } { 2 4 6 } { 8 5 9 3 } } ;
-
-! triangle dup 0 2 visit dup 1 2 visit dup 2 2 visit dup 0 1 visit dup 1 1 visit dup 0 0 visit [ . ] each
-
-! :: visit* ( g -- ) 14 [0,b) reverse [ dup [0,b] [ dupd g -rot visit ] each ] each ;
-
 : euler67 ( -- )
     triangle
-    14 [0,b) reverse
+    dup 99 [0,b) reverse swap
     [
-        dup [0,b]
-        [
-            2drop
-        ]
-        each
+        swap dup [0,b] -rot swap
+        [ visit ] 2curry each
     ]
-    each ;
+    curry each
+    first first . ;
 
 MAIN: euler67
