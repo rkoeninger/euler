@@ -6,7 +6,6 @@
 
 USE: kernel
 USE: math
-USE: math.factorials
 USE: math.parser
 USE: math.ranges
 USE: present
@@ -16,6 +15,9 @@ IN: euler34
 
 : number>digits ( n -- ds )
     present [ digit> ] map ;
+
+: factorial ( n -- n! )
+    { 1 1 2 6 24 120 720 5040 40320 362880 } nth ;
 
 : digit-factorial ( n -- ? )
     dup number>digits
