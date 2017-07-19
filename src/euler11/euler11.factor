@@ -59,37 +59,31 @@ IN: euler11
 : colinear-product ( ps -- k )
     [ @ ] map product ;
 
+:: scan ( i0 in j0 jn di dj -- x )
+    i0 in [a,b]
+    j0 jn [a,b]
+    [ <pair> di dj <pair> extrude colinear-product ] cartesian-map
+    concat supremum ;
+
 ! TODO: scan every cell expect those in the bottom 3 rows
 ! for each cell, product the numbers in that cell and the lower 3
 : scan-verticals ( -- x )
-    0 16 [a,b]
-    0 19 [a,b]
-    [ <pair> 1 0 <pair> extrude colinear-product ] cartesian-map
-    concat supremum ;
+    0 16 0 19 1 0 scan ;
 
 ! TODO: scan every cell expect those in the right 3 cols
 ! for each cell, product the numbers in that cell and the right 3
 : scan-horizontals ( -- x )
-    0 19 [a,b]
-    0 16 [a,b]
-    [ <pair> 0 1 <pair> extrude colinear-product ] cartesian-map
-    concat supremum ;
+    0 19 0 16 0 1 scan ;
 
 ! TODO: scan every cell expect those in the right 3 cols and bottom 3 rows
 ! for each cell, product the numbers in that cell and the down-right 3
 : scan-diagonals ( -- x )
-    0 16 [a,b]
-    0 16 [a,b]
-    [ <pair> 1 1 <pair> extrude colinear-product ] cartesian-map
-    concat supremum ;
+    0 16 0 16 1 1 scan ;
 
 ! TODO: scan every cell expect those in the left 3 cols and bottom 3 rows
 ! for each cell, product the numbers in that cell and the down-left 3
 : scan-diagonals-2 ( -- x )
-    3 19 [a,b] reverse
-    0 16 [a,b]
-    [ <pair> -1 1 <pair> extrude colinear-product ] cartesian-map
-    concat supremum ;
+    3 19 0 16 -1 1 scan ;
 
 : euler11 ( -- )
     scan-verticals
