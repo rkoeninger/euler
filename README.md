@@ -32,6 +32,7 @@ Solutions to several problems are listed by GitHub user nayuki [here](https://gi
 | 23 | [Sum of positive numbers that are not sum of two abundant numbers](https://projecteuler.net/problem=23) | [euler23.factor](https://github.com/rkoeninger/euler/blob/master/src/euler23/euler23.factor) |
 | 24 | [1,000,000th lexicographic permutation of 0,1,2,3,4,5,6,7,8,9](https://projecteuler.net/problem=24) | [euler24.factor](https://github.com/rkoeninger/euler/blob/master/src/euler24/euler24.factor) |
 | 25 | [Index of 1st 1000-digit Fibonacci number](https://projecteuler.net/problem=25) | [euler25.factor](https://github.com/rkoeninger/euler/blob/master/src/euler25/euler25.factor) |
+| 26 | [Find n in \[1..1000\] where 1/n has longest decimal cycle](https://projecteuler.net/problem=26) | [euler26.factor](https://github.com/rkoeninger/euler/blob/master/src/euler26/euler26.factor) |
 | 27 | [Product of coefficients of quadratic with greatest number of primes](https://projecteuler.net/problem=27) | [euler27.factor](https://github.com/rkoeninger/euler/blob/master/src/euler27/euler27.factor) |
 | 30 | [Sum of numbers equal to sum of each digit to 5th power](https://projecteuler.net/problem=30) | [euler30.factor](https://github.com/rkoeninger/euler/blob/master/src/euler30/euler30.factor) |
 | 48 | [Last 10 digits of n^n, n = \[1..1000\]](https://projecteuler.net/problem=48) | [euler48.factor](https://github.com/rkoeninger/euler/blob/master/src/euler48/euler48.factor) |
