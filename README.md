@@ -35,6 +35,7 @@ Solutions to several problems are listed by GitHub user nayuki [here](https://gi
 | 25 | [Index of 1st 1000-digit Fibonacci number](https://projecteuler.net/problem=25) | [euler25.factor](https://github.com/rkoeninger/euler/blob/master/src/euler25/euler25.factor) |
 | 26 | [Find n in \[1..1000\] where 1/n has longest decimal cycle](https://projecteuler.net/problem=26) | [euler26.factor](https://github.com/rkoeninger/euler/blob/master/src/euler26/euler26.factor) |
 | 27 | [Product of coefficients of quadratic with greatest number of primes](https://projecteuler.net/problem=27) | [euler27.factor](https://github.com/rkoeninger/euler/blob/master/src/euler27/euler27.factor) |
+| 28 | [Sum of values along the diagonals of a sprial grid](https://projecteuler.net/problem=28) | [euler28.factor](https://github.com/rkoeninger/euler/blob/master/src/euler28/euler28.factor) |
 | 29 | [Count of distinct terms of a^b where a, b = \[2..100\]](https://projecteuler.net/problem=29) | [euler29.factor](https://github.com/rkoeninger/euler/blob/master/src/euler29/euler29.factor) |
 | 30 | [Sum of numbers equal to sum of each digit to 5th power](https://projecteuler.net/problem=30) | [euler30.factor](https://github.com/rkoeninger/euler/blob/master/src/euler30/euler30.factor) |
 | 34 | [Sum of numbers equal to sum of factorials of digits](https://projecteuler.net/problem=34) | [euler34.factor](https://github.com/rkoeninger/euler/blob/master/src/euler34/euler34.factor) |
