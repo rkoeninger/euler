@@ -16,6 +16,7 @@ USE: io.encodings.utf8
 USE: math
 USE: math.order
 USE: sequences
+USE: sorting
 IN: euler22
 
 : euler22 ( -- )
