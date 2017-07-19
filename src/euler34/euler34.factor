@@ -4,6 +4,7 @@
 
 ! Note: as 1! = 1 and 2! = 2 are not sums they are not included.
 
+USE: kernel
 USE: math
 USE: math.factorials
 USE: math.parser
@@ -22,7 +23,7 @@ IN: euler34
     sum = ;
 
 : euler34 ( -- )
-    3 100000 [a,b]
+    10 100000 [a,b]
     [ digit-factorial ] filter
     sum . ;
 
