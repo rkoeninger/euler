@@ -13,6 +13,7 @@ USE: locals
 USE: math
 USE: math.order
 USE: math.ranges
+USE: prettyprint
 USE: sequences
 IN: euler67
 
