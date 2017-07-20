@@ -7,6 +7,7 @@
 ! How many circular primes are there below one million?
 
 USE: kernel
+USE: math.parser
 USE: math.primes
 USE: math.ranges
 USE: prettyprint
