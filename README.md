@@ -38,6 +38,7 @@ Solutions to several problems are listed by GitHub user nayuki [here](https://gi
 | 28 | [Sum of values along the diagonals of a sprial grid](https://projecteuler.net/problem=28) | [euler28.factor](https://github.com/rkoeninger/euler/blob/master/src/euler28/euler28.factor) |
 | 29 | [Count of distinct terms of a^b where a, b = \[2..100\]](https://projecteuler.net/problem=29) | [euler29.factor](https://github.com/rkoeninger/euler/blob/master/src/euler29/euler29.factor) |
 | 30 | [Sum of numbers equal to sum of each digit to 5th power](https://projecteuler.net/problem=30) | [euler30.factor](https://github.com/rkoeninger/euler/blob/master/src/euler30/euler30.factor) |
+| 31 | [Count of coin combinations that make £2](https://projecteuler.net/problem=31) | [euler31.factor](https://github.com/rkoeninger/euler/blob/master/src/euler31/euler31.factor) |
 | 34 | [Sum of numbers equal to sum of factorials of digits](https://projecteuler.net/problem=34) | [euler34.factor](https://github.com/rkoeninger/euler/blob/master/src/euler34/euler34.factor) |
 | 48 | [Last 10 digits of n^n, n = \[1..1000\]](https://projecteuler.net/problem=48) | [euler48.factor](https://github.com/rkoeninger/euler/blob/master/src/euler48/euler48.factor) |
 | 67 | [Max value path through 100-row triangluar grid](https://projecteuler.net/problem=67) | [euler67.factor](https://github.com/rkoeninger/euler/blob/master/src/euler67/euler67.factor) |
