@@ -15,10 +15,19 @@ IN: euler32
     [ 10^ * ] 2map
     sum ;
 
-: pandigital-product? ( seq -- ?n )
-    [ { 5 6 7 8 } swap nths digits>number ]
-    [ { 2 3 4 }   swap nths digits>number ]
-    [ { 0 1 }     swap nths digits>number ]
+: 1-4-pandigital-product? ( seq -- ?n )
+    [ 4 tail*       digits>number ]
+    [ 1 tail 4 head digits>number ]
+    [ 1 head        digits>number ]
+    tri *
+    dupd = not
+    [ drop f ]
+    when ;
+
+: 2-3-pandigital-product? ( seq -- ?n )
+    [ 4 tail*       digits>number ]
+    [ 2 tail 3 head digits>number ]
+    [ 2 head        digits>number ]
     tri *
     dupd = not
     [ drop f ]
@@ -26,7 +35,11 @@ IN: euler32
 
 : euler32 ( -- )
     9 [1,b] all-permutations
-    [ pandigital-product? ] map
+    [
+        [ 1-4-pandigital-product? ]
+        [ 2-3-pandigital-product? ]
+        bi or
+    ] map
     sift members sum . ;
 
 MAIN: euler32
