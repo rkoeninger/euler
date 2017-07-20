@@ -14,6 +14,7 @@ USE: kernel
 USE: locals
 USE: math
 USE: math.order
+USE: math.parser
 USE: math.ranges
 USE: prettyprint
 USE: sequences
@@ -23,7 +24,7 @@ IN: euler67
 : triangle ( -- g )
     "./work/euler67/triangle.txt" utf8 file-contents
     { 10 13 } split
-    [ { 32 } split ] map ;
+    [ { 32 } split [ string>number ] map ] map ;
 
 :: visit ( j i g -- )
     j i 1 + g nth nth
