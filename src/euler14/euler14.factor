@@ -4,7 +4,6 @@
 USE: kernel
 USE: math
 USE: math.ranges
-USE: memoize
 USE: prettyprint
 USE: sequences
 IN: euler14
@@ -14,14 +13,18 @@ IN: euler14
     [ 2 / ]
     [ 3 * 1 + ]
     if ;
-inline
 
-MEMO: collatz-length ( n -- y )
-    dup 1 =
-    [ ]
-    [ collatz-step collatz-length 1 + ]
-    if ;
-recursive
+: collatz-loop ( n x -- y )
+    [ dup 1 > ]
+    [
+        collatz-step
+        swap 1 + swap
+    ]
+    while
+    drop ;
+
+: collatz-length ( n -- y )
+    1 swap collatz-loop ;
 
 : euler14 ( -- )
     1 1000000 [a,b) reverse
