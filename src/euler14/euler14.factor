@@ -1,11 +1,10 @@
 ! Which starting number, under one million,
 ! produces the longest Collatz sequence?
 
-USE: io
 USE: kernel
 USE: math
 USE: math.ranges
-USE: present
+USE: prettyprint
 USE: sequences
 IN: euler14
 
@@ -29,7 +28,6 @@ IN: euler14
 
 : euler14 ( -- )
     1 1000000 [a,b) reverse
-    [ collatz-length ] supremum-by
-    present print ;
+    [ collatz-length ] supremum-by . ;
 
 MAIN: euler14

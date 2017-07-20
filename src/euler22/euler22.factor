@@ -11,8 +11,8 @@
 ! What is the total of all the name scores in the file?
 
 USE: csv
-USE: kernel
 USE: io.encodings.utf8
+USE: kernel
 USE: math
 USE: math.order
 USE: prettyprint
