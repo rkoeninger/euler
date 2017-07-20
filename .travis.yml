@@ -42,6 +42,7 @@ script:
   - ./factor -run=euler29
   - ./factor -run=euler30
   - ./factor -run=euler31
+  #- ./factor -run=euler32 # returns 30424, should be 45228
   - ./factor -run=euler34
   - ./factor -run=euler48
   - ./factor -run=euler67
