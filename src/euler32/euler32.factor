@@ -1,6 +1,15 @@
-! 
+! We shall say that an n-digit number is pandigital if it makes use
+! of all the digits 1 to n exactly once; for example, the 5-digit
+! number, 15234, is 1 through 5 pandigital.
+
+! The product 7254 is unusual, as the identity, 39 × 186 = 7254,
+! containing multiplicand, multiplier, and product is 1 through 9 pandigital.
+
+! Find the sum of all products whose multiplicand/multiplier/product
+! identity can be written as a 1 through 9 pandigital.
 
 USE: kernel
+USE: locals
 USE: math
 USE: math.combinatorics
 USE: math.functions
@@ -15,19 +24,11 @@ IN: euler32
     [ 10^ * ] 2map
     sum ;
 
-: 1-4-pandigital-product? ( seq -- ?n )
+:: pandigital-product? ( seq i j -- ?n )
+    seq
     [ 4 tail*       digits>number ]
-    [ 1 tail 4 head digits>number ]
-    [ 1 head        digits>number ]
-    tri *
-    dupd = not
-    [ drop f ]
-    when ;
-
-: 2-3-pandigital-product? ( seq -- ?n )
-    [ 4 tail*       digits>number ]
-    [ 2 tail 3 head digits>number ]
-    [ 2 head        digits>number ]
+    [ i tail j head digits>number ]
+    [ i head        digits>number ]
     tri *
     dupd = not
     [ drop f ]
@@ -36,8 +37,8 @@ IN: euler32
 : euler32 ( -- )
     9 [1,b] all-permutations
     [
-        [ 1-4-pandigital-product? ]
-        [ 2-3-pandigital-product? ]
+        [ 1 4 pandigital-product? ]
+        [ 2 3 pandigital-product? ]
         bi or
     ] map
     sift members sum . ;
