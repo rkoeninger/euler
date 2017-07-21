@@ -48,6 +48,7 @@ script:
   - ./factor -run=euler35
   - ./factor -run=euler36
   - ./factor -run=euler37
+  - ./factor -run=euler38
   - ./factor -run=euler48
   - ./factor -run=euler67
   - ./factor -run=euler97
