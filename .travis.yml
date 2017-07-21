@@ -10,45 +10,44 @@ install:
   - tar -xf factor-linux-x86-64-0.97.tar.gz
 script:
   - cp -R src/. factor/work
-  - ./prob 1 233168
-  - ./prob 2 4613732
-  - ./prob 3 6857
-  - cd ./factor
-  - ./factor -run=euler4
-  - ./factor -run=euler5
-  - ./factor -run=euler6
-  - ./factor -run=euler7
-  - ./factor -run=euler8
-  - ./factor -run=euler9
-  - ./factor -run=euler10
-  - ./factor -run=euler11
-  - ./factor -run=euler12
-  - ./factor -run=euler13
-  - ./factor -run=euler14
-  - ./factor -run=euler15
-  - ./factor -run=euler16
-  - ./factor -run=euler17
-  - ./factor -run=euler18
-  - ./factor -run=euler19
-  - ./factor -run=euler20
-  - ./factor -run=euler21
-  - ./factor -run=euler22
-  - ./factor -run=euler23
-  - ./factor -run=euler24
-  - ./factor -run=euler25
-  - ./factor -run=euler26
-  - ./factor -run=euler27
-  - ./factor -run=euler28
-  - ./factor -run=euler29
-  - ./factor -run=euler30
-  - ./factor -run=euler31
-  - ./factor -run=euler32
-  - ./factor -run=euler33
-  - ./factor -run=euler34
-  - ./factor -run=euler35
-  - ./factor -run=euler36
-  - ./factor -run=euler37
-  - ./factor -run=euler38
-  - ./factor -run=euler48
-  - ./factor -run=euler67
-  - ./factor -run=euler97
+  - ./prob  1 233168
+  - ./prob  2 4613732
+  - ./prob  3 6857
+  - ./prob  4 906609
+  - ./prob  5 232792560
+  - ./prob  6 25164150
+  - ./prob  7 104743
+  - ./prob  8 23514624000
+  - ./prob  9 31875000
+  - ./prob 10 142913828922
+  - ./prob 11 70600674
+  - ./prob 12 76576500
+  - ./prob 13 5537376230
+  - ./prob 14 837799
+  - ./prob 15 137846528820
+  - ./prob 16 1366
+  - ./prob 17 21124
+  - ./prob 18 1074
+  - ./prob 19 171
+  - ./prob 20 648
+  - ./prob 21 31626
+  - ./prob 22 871198282
+  - ./prob 23 4179871
+  - ./prob 24 2783915460
+  - ./prob 25 4782
+  - ./prob 26 983
+  - ./prob 27 -59231
+  - ./prob 28 669171001
+  - ./prob 29 9183
+  - ./prob 30 443839
+  - ./prob 31 73682
+  - ./prob 32 45228
+  - ./prob 33 100
+  - ./prob 34 40730
+  - ./prob 35 55
+  - ./prob 36 872187
+  - ./prob 37 748317
+  - ./prob 38 932718654
+  - ./prob 48 9110846700
+  - ./prob 67 7273
+  - ./prob 97 8739992577

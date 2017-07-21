@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-pushd factor
+pushd factor > /dev/null
 
 RESULT=$(./factor -run=euler$1)
 
@@ -11,4 +11,4 @@ if [ $RESULT -ne $2 ]; then
 	exit 1
 fi
 
-popd
+popd > /dev/null
