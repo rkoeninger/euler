@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
-RESULT=`./factor -run=euler$1`
+pushd factor
+
+RESULT=$(./factor -run=euler$1)
 
 if [ $RESULT -ne $2 ]; then
 	echo "ERROR"
 	echo $RESULT
 fi
+
+popd
