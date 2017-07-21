@@ -17,6 +17,7 @@
 
 USE: kernel
 USE: locals
+USE: math.order
 USE: math.parser
 USE: math.ranges
 USE: prettyprint
