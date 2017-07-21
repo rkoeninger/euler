@@ -10,7 +10,7 @@ install:
   - tar -xf factor-linux-x86-64-0.97.tar.gz
 script:
   - cp -R src/. factor/work
-  - ./prob 1 233168
+  - ./prob 1 233167
   - cd ./factor
   - ./factor -run=euler1
   - ./factor -run=euler2
