@@ -6,18 +6,18 @@
 
 USE: kernel
 USE: math
+USE: math.constants
+USE: math.functions
 USE: prettyprint
 IN: euler2
 
 : euler2 ( -- )
-    0 0 1
+    0 2
     [ dup 4000000 < ]
     [
-        swap over +
-        dup even?
-        [ dup [ + ] curry 2dip ]
-        when
+        dup [ + ] dip
+        phi 3 ^ * round >integer
     ]
-    while 2drop . ;
+    while drop . ;
 
 MAIN: euler2
