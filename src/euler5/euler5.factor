@@ -3,40 +3,17 @@
 ! What is the smallest positive number that is evenly divisible by
 ! all of the numbers from 1 to 20?
 
-USE: io
 USE: kernel
 USE: math
 USE: math.functions
-USE: math.ranges
-USE: present
+USE: prettyprint
 USE: sequences
 IN: euler5
 
-: divisor-any? ( ps n -- ? )
-    [ swap divisor? ] curry any? ;
-
-: primes ( ps0 lim n -- ps )
-    2dup <
-    [ 2drop ]
-    [
-        swapd 2dup
-        divisor-any?
-        [ ]
-        [ swap over suffix swap ]
-        if
-        swapd
-        1 +
-        primes
-    ]
-    if ;
-recursive
-
 : euler5 ( -- )
-    { } 20 2 primes
-    dup
-    [ 20 log swap log / floor >integer ] map
+    { 2 3 5 7 11 3 17 19 } dup
+    [ 20 [ log ] bi@ swap / >integer ] map
     [ ^ ] 2map
-    product
-    present print ;
+    product . ;
 
 MAIN: euler5
