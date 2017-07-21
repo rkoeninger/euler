@@ -11,7 +11,7 @@ USE: sequences
 IN: euler5
 
 : euler5 ( -- )
-    { 2 3 5 7 11 3 17 19 } dup
+    { 2 3 5 7 11 13 17 19 } dup
     [ 20 [ log ] bi@ swap / >integer ] map
     [ ^ ] 2map
     product . ;
