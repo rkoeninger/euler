@@ -4,9 +4,11 @@ pushd factor
 
 RESULT=$(./factor -run=euler$1)
 
+echo $RESULT
+
 if [ $RESULT -ne $2 ]; then
 	echo "ERROR"
-	echo $RESULT
+	exit 1
 fi
 
 popd
