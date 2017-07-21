@@ -11,7 +11,7 @@ install:
 script:
   - cp -R src/. factor/work
   - cd ./factor
-  - prob 1 233168
+  - ./prob 1 233168
   - ./factor -run=euler1
   - ./factor -run=euler2
   - ./factor -run=euler3
