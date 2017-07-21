@@ -7,19 +7,17 @@
 ! Find the difference between the sum of the squares of the first
 ! one hundred natural numbers and the square of the sum.
 
-USE: io
 USE: kernel
 USE: math
 USE: math.ranges
-USE: present
+USE: prettyprint
 USE: sequences
 IN: euler6
 
 : euler6 ( -- )
     100 [1,b]
     [ sum sq ]
-    [ [ sq ] map sum ]
-    bi -
-    present print ;
+    [ [ sq ] map-sum ]
+    bi - . ;
 
 MAIN: euler6
