@@ -23,6 +23,7 @@ USE: math.ranges
 USE: prettyprint
 USE: sequences
 USE: sorting
+USE: strings
 IN: euler38
 
 : pandigital? ( s -- ? )
