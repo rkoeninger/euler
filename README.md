@@ -40,6 +40,7 @@ Solutions to several problems are listed by GitHub user nayuki [here](https://gi
 | 30 | [Sum of numbers equal to sum of each digit to 5th power](https://projecteuler.net/problem=30) | [euler30.factor](https://github.com/rkoeninger/euler/blob/master/src/euler30/euler30.factor) |
 | 31 | [Count of coin combinations that make £2](https://projecteuler.net/problem=31) | [euler31.factor](https://github.com/rkoeninger/euler/blob/master/src/euler31/euler31.factor) |
 | 32 | [Sum of products whose divisors/product use unique digits 1..9](https://projecteuler.net/problem=32) | [euler32.factor](https://github.com/rkoeninger/euler/blob/master/src/euler32/euler32.factor) |
+| 33 | [Product of denominators of digit-cancellable fractions](https://projecteuler.net/problem=33) | [euler33.factor](https://github.com/rkoeninger/euler/blob/master/src/euler33/euler33.factor) |
 | 34 | [Sum of numbers equal to sum of factorials of digits](https://projecteuler.net/problem=34) | [euler34.factor](https://github.com/rkoeninger/euler/blob/master/src/euler34/euler34.factor) |
 | 35 | [Count of circular primes under 1,000,000](https://projecteuler.net/problem=35) | [euler35.factor](https://github.com/rkoeninger/euler/blob/master/src/euler35/euler35.factor) |
 | 36 | [Sum of numbers that are palindromes in base 2 and 10](https://projecteuler.net/problem=36) | [euler36.factor](https://github.com/rkoeninger/euler/blob/master/src/euler36/euler36.factor) |
