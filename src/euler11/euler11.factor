@@ -65,23 +65,19 @@ IN: euler11
     [ <pair> di dj <pair> extrude colinear-product ] cartesian-map
     concat supremum ;
 
-! TODO: scan every cell expect those in the bottom 3 rows
-! for each cell, product the numbers in that cell and the lower 3
+! For each cell, except in the bottom 3 rows, product that cell and the lower 3
 : scan-verticals ( -- x )
     0 16 0 19 1 0 scan ;
 
-! TODO: scan every cell expect those in the right 3 cols
-! for each cell, product the numbers in that cell and the right 3
+! For each cell, except in the right 3 cols, product that cell and the right 3
 : scan-horizontals ( -- x )
     0 19 0 16 0 1 scan ;
 
-! TODO: scan every cell expect those in the right 3 cols and bottom 3 rows
-! for each cell, product the numbers in that cell and the down-right 3
+! For each cell, except in the bottom/right 3 rows/cols, product that cell and the lower-right 3
 : scan-diagonals ( -- x )
     0 16 0 16 1 1 scan ;
 
-! TODO: scan every cell expect those in the left 3 cols and bottom 3 rows
-! for each cell, product the numbers in that cell and the down-left 3
+! For each cell, except in the bottom/left 3 rows/cols, product that cell and the lower-left 3
 : scan-diagonals-2 ( -- x )
     3 19 0 16 -1 1 scan ;
 

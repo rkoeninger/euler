@@ -11,6 +11,6 @@ IN: euler13
 : euler13 ( -- )
     "./work/euler13/bignumbers.txt" utf8 file-lines
     [ string>number ] map-sum
-    number>string 10 head . ;
+    number>string 10 head string>number . ;
 
 MAIN: euler13
