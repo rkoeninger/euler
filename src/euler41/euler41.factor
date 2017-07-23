@@ -19,7 +19,7 @@ IN: euler41
 : euler41 ( -- )
     9 [1,b]
     [
-        [0,b] all-permutations
+        [1,b] all-permutations
         [ digits>number ] map
         [ prime? ] filter
         0 suffix
