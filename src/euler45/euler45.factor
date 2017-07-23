@@ -13,6 +13,7 @@ USE: kernel
 USE: math
 USE: math.functions
 USE: math.quadratic
+USE: prettyprint
 IN: euler45
 
 : triangle ( n -- x )
