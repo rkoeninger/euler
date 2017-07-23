@@ -1,6 +1,5 @@
 ! Find the sum of the digits in the number 100!
 
-USE: kernel
 USE: math.factorials
 USE: math.parser
 USE: prettyprint
