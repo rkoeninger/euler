@@ -48,6 +48,7 @@ Solutions to several problems are listed by GitHub user nayuki [here](https://gi
 | 38 | [Greatest 1-to-9 pandigital concatentated product](https://projecteuler.net/problem=38) | [euler38.factor](https://github.com/rkoeninger/euler/blob/master/src/euler38/euler38.factor) |
 | 39 | [Number which is sum of greatest number of pythagorean triples](https://projecteuler.net/problem=39) | [euler39.factor](https://github.com/rkoeninger/euler/blob/master/src/euler39/euler39.factor) |
 | 40 | [Product of exponentially increasing digits in irrational number](https://projecteuler.net/problem=40) | [euler40.factor](https://github.com/rkoeninger/euler/blob/master/src/euler40/euler40.factor) |
+| 41 | [Greatest pandigital prime](https://projecteuler.net/problem=41) | [euler41.factor](https://github.com/rkoeninger/euler/blob/master/src/euler41/euler41.factor) |
 | 48 | [Last 10 digits of n^n, n = \[1..1000\]](https://projecteuler.net/problem=48) | [euler48.factor](https://github.com/rkoeninger/euler/blob/master/src/euler48/euler48.factor) |
 | 67 | [Max value path through 100-row triangluar grid](https://projecteuler.net/problem=67) | [euler67.factor](https://github.com/rkoeninger/euler/blob/master/src/euler67/euler67.factor) |
 | 97 | [Last 10 digits of (28433×(2^7830457))+1](https://projecteuler.net/problem=97) | [euler97.factor](https://github.com/rkoeninger/euler/blob/master/src/euler97/euler97.factor) |
