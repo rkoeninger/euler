@@ -51,6 +51,7 @@ Solutions to several problems are listed by GitHub user nayuki [here](https://gi
 | 41 | [Greatest pandigital prime](https://projecteuler.net/problem=41) | [euler41.factor](https://github.com/rkoeninger/euler/blob/master/src/euler41/euler41.factor) |
 | 42 | [Count of words with letters that add up to triangular numbers](https://projecteuler.net/problem=42) | [euler42.factor](https://github.com/rkoeninger/euler/blob/master/src/euler42/euler42.factor) |
 | 43 | [Sum of pandigitals with substrings divisble by successive primes](https://projecteuler.net/problem=43) | [euler43.factor](https://github.com/rkoeninger/euler/blob/master/src/euler43/euler43.factor) |
+| 45 | [Triangular number that is also pentagonal and hexagonal](https://projecteuler.net/problem=45) | [euler45.factor](https://github.com/rkoeninger/euler/blob/master/src/euler45/euler45.factor) |
 | 48 | [Last 10 digits of n^n, n = \[1..1000\]](https://projecteuler.net/problem=48) | [euler48.factor](https://github.com/rkoeninger/euler/blob/master/src/euler48/euler48.factor) |
 | 67 | [Max value path through 100-row triangluar grid](https://projecteuler.net/problem=67) | [euler67.factor](https://github.com/rkoeninger/euler/blob/master/src/euler67/euler67.factor) |
 | 97 | [Last 10 digits of (28433×(2^7830457))+1](https://projecteuler.net/problem=97) | [euler97.factor](https://github.com/rkoeninger/euler/blob/master/src/euler97/euler97.factor) |
