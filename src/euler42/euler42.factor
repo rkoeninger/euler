@@ -24,6 +24,6 @@ IN: euler42
 
 : euler42 ( -- )
     "./work/euler42/words.txt" utf8 file>csv concat
-    [ [ 64 - ] map sum triangle? ] count ;
+    [ [ 64 - ] map sum triangle? ] count . ;
 
 MAIN: euler42
