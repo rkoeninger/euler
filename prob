@@ -2,9 +2,9 @@
 
 pushd factor > /dev/null
 
-RESULT=`./factor -run=euler$1`
+RESULT=$(./factor -run=euler$1)
 
-if [ $RESULT -ne $2 ]; then
+if [ "$RESULT" -ne "$2" ]; then
 	echo "ERROR"
 	echo $RESULT
 	exit 1
