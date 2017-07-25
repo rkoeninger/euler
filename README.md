@@ -56,5 +56,6 @@ Solutions to several problems are listed by GitHub user nayuki [here](https://gi
 | 47 | [First of 4 consecutive numbers with 4 distinct prime factors](https://projecteuler.net/problem=47) | [euler47.factor](https://github.com/rkoeninger/euler/blob/master/src/euler47/euler47.factor) |
 | 48 | [Last 10 digits of n^n, n = \[1..1000\]](https://projecteuler.net/problem=48) | [euler48.factor](https://github.com/rkoeninger/euler/blob/master/src/euler48/euler48.factor) |
 | 52 | [First number where 2n, 3n, 4n, 5n and 6n all have same digits](https://projecteuler.net/problem=52) | [euler52.factor](https://github.com/rkoeninger/euler/blob/master/src/euler52/euler52.factor) |
+| 53 | [Number of subsets size greater than 1,000,000 for sets size <= 100](https://projecteuler.net/problem=53) | [euler53.factor](https://github.com/rkoeninger/euler/blob/master/src/euler53/euler53.factor) |
 | 67 | [Max value path through 100-row triangluar grid](https://projecteuler.net/problem=67) | [euler67.factor](https://github.com/rkoeninger/euler/blob/master/src/euler67/euler67.factor) |
 | 97 | [Last 10 digits of (28433×(2^7830457))+1](https://projecteuler.net/problem=97) | [euler97.factor](https://github.com/rkoeninger/euler/blob/master/src/euler97/euler97.factor) |
