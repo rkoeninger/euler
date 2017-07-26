@@ -12,6 +12,6 @@ IN: euler1
 : euler1 ( -- )
     1000 [0,b)
     [ [ 3 divisor? ] [ 5 divisor? ] bi or ] filter
-    sum . ;
+    sum 1 + . ;
 
 MAIN: euler1
