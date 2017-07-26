@@ -7,7 +7,7 @@ All solutions are provided in [Factor](https://factorcode.org/), a dynamically t
 Solutions to several problems are listed by GitHub user nayuki [here](https://github.com/nayuki/Project-Euler-solutions/blob/master/Answers.txt).
 
 | #  | Descripion | Code |
-|----|------------|------|
+|---:|------------|------|
 |  1 | [Sum of multiples of 3 or 5 < 1000](https://projecteuler.net/problem=1) | [euler1.factor](https://github.com/rkoeninger/euler/blob/master/src/euler1/euler1.factor) |
 |  2 | [Sum of even Fibonacci numbers < 4,000,000](https://projecteuler.net/problem=2) | [euler2.factor](https://github.com/rkoeninger/euler/blob/master/src/euler2/euler2.factor) |
 |  3 | [Largest prime factor of 600,851,475,143](https://projecteuler.net/problem=3) | [euler3.factor](https://github.com/rkoeninger/euler/blob/master/src/euler3/euler3.factor) |
