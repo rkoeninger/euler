@@ -3,11 +3,13 @@
 pushd factor > /dev/null
 
 RESULT=$(./factor -run=euler$1)
+RETURN_CODE=$?
 
 if [ "$RESULT" -ne "$2" ]; then
 	echo "ERROR"
 	echo $RESULT
-	exit 1
 fi
 
 popd > /dev/null
+
+exit $RETURN_CODE
