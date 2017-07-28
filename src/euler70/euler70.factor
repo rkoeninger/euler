@@ -11,6 +11,7 @@ USE: math.primes.factors
 USE: math.ranges
 USE: prettyprint
 USE: sequences
+USE: sorting
 IN: euler70
 
 : permutation? ( x y -- ? )
