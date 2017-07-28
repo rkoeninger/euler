@@ -7,6 +7,7 @@
 USE: kernel
 USE: math
 USE: math.order
+USE: math.parser
 USE: math.primes.factors
 USE: math.ranges
 USE: prettyprint
@@ -15,7 +16,7 @@ USE: sorting
 IN: euler70
 
 : permutation? ( x y -- ? )
-    [ [ <=> ] sort ] bi@ = ;
+    [ number>string [ <=> ] sort ] bi@ = ;
 
 : euler70 ( -- )
     1 10000000 (a,b)
