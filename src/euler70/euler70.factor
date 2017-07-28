@@ -13,6 +13,9 @@ USE: prettyprint
 USE: sequences
 IN: euler70
 
+: permutation? ( x y -- ? )
+    [ [ <=> ] sort ] bi@ = ;
+
 : euler70 ( -- )
     1 10000000 (a,b)
     [ dup totient permutation? ] filter
