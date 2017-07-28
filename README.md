@@ -60,5 +60,6 @@ Solutions to several problems are listed by GitHub user nayuki [here](https://gi
 | 56 | [Greatest digit sum for a^b where a, b = \[1..99\]](https://projecteuler.net/problem=56) | [euler56.factor](https://github.com/rkoeninger/euler/blob/master/src/euler56/euler56.factor) |
 | 57 | [Esitmations of sqrt(2) that have greater numerator](https://projecteuler.net/problem=57) | [euler57.factor](https://github.com/rkoeninger/euler/blob/master/src/euler57/euler57.factor) |
 | 67 | [Max value path through 100-row triangluar grid](https://projecteuler.net/problem=67) | [euler67.factor](https://github.com/rkoeninger/euler/blob/master/src/euler67/euler67.factor) |
+| 69 | [Value in \[1..1,000,000\] for which n/φ(n) is greatest](https://projecteuler.net/problem=69) | [euler69.factor](https://github.com/rkoeninger/euler/blob/master/src/euler69/euler69.factor) |
 | 79 | [Derive passcode from sample subsequences](https://projecteuler.net/problem=79) | [euler79.factor](https://github.com/rkoeninger/euler/blob/master/src/euler79/euler79.factor) |
 | 97 | [Last 10 digits of (28433×(2^7830457))+1](https://projecteuler.net/problem=97) | [euler97.factor](https://github.com/rkoeninger/euler/blob/master/src/euler97/euler97.factor) |
