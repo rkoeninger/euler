@@ -65,4 +65,5 @@ Solutions to several problems are listed by GitHub user nayuki [here](https://gi
 | 79 | [Derive passcode from sample subsequences](https://projecteuler.net/problem=79) | [euler79.factor](https://github.com/rkoeninger/euler/blob/master/src/euler79/euler79.factor) |
 | 85 | [Area of rectangular grid with number of sub-rectangles closest to 2,000,000](https://projecteuler.net/problem=85) | [euler85.factor](https://github.com/rkoeninger/euler/blob/master/src/euler85/euler85.factor) |
 | 92 | [Number of square digits chains that arrive at 89 starting under 10,000,000](https://projecteuler.net/problem=92) | [euler92.factor](https://github.com/rkoeninger/euler/blob/master/src/euler92/euler92.factor) |
+| 94 | [Sum of perimeters of almost equilateral triangles with integer areas](https://projecteuler.net/problem=94) | [euler94.factor](https://github.com/rkoeninger/euler/blob/master/src/euler94/euler94.factor) |
 | 97 | [Last 10 digits of (28433×(2^7830457))+1](https://projecteuler.net/problem=97) | [euler97.factor](https://github.com/rkoeninger/euler/blob/master/src/euler97/euler97.factor) |
