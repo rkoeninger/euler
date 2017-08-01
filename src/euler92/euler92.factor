@@ -13,6 +13,7 @@
 
 USE: hash-sets
 USE: kernel
+USE: math
 USE: math.parser
 USE: math.ranges
 USE: prettyprint
