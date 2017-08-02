@@ -11,6 +11,7 @@
 ! exceed one billion (1,000,000,000).
 
 USE: kernel
+USE: locals
 USE: math
 USE: math.functions
 USE: math.ranges
@@ -18,28 +19,25 @@ USE: prettyprint
 USE: sequences
 IN: euler94
 
-: <pair> ( a b -- p )
-    { } swap prefix swap prefix ;
+:: area ( n k -- x )
+    n 3 * k +
+    n k + sq
+    n k -
+    * * sqrt 4 / ;
 
-: <triplet> ( a b c -- p )
-    { } swap prefix swap prefix swap prefix ;
-
-: >triplet< ( p -- a b c )
-    [ first ] [ second ] [ third ] tri ;
-
-: area ( a b c -- x )
-    3dup + + 2 /
-    dup [ [ swap - ] curry tri@ * * ] dip *
-    sqrt ;
+: perimeter ( n k -- x )
+    2dup area dup round =
+    [ swap 3 * + ]
+    [ 2drop 0 ]
+    if ;
 
 : euler94 ( -- )
-    2 1000000000 [a,b]
+    2 333333333 [a,b]
     [
-        [ dup dup 1 + <triplet> ]
-        [ dup dup 1 - <triplet> ]
-        bi <pair>
-    ] map concat
-    [ >triplet< area dup round = ] filter
-    [ >triplet< + + ] map-sum . ;
+        [  1 perimeter ]
+        [ -1 perimeter ]
+        bi +
+    ]
+    map-sum . ;
 
 MAIN: euler94
