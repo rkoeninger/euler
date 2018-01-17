@@ -11,7 +11,7 @@ IN: euler48
 
 : euler48 ( -- )
     1000 [1,b]
-    [ dup ^ ] map
-    sum 10 10 ^ mod . ;
+    [ dup 10 10 ^ ^mod ] map-sum
+    10 10 ^ mod . ;
 
 MAIN: euler48
