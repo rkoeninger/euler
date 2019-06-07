@@ -7,9 +7,13 @@
 ! Find b for the first n > 10^20 for which there is exactly 1/2 chance
 ! of taking 2 blue.
 
+USE: kernel
 USE: locals
+USE: math
 USE: math.functions
 USE: math.ranges
+USE: prettyprint
+USE: sequences
 IN: euler100
 
 : n->b1 ( n -- b1 ) 2 sqrt / floor >integer ;
