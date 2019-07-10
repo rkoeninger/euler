@@ -1,4 +1,3 @@
-[![Factor Version](https://img.shields.io/badge/factor-0.97-636746.svg)](http://factorcode.org/)
 [![Build Status](https://travis-ci.org/rkoeninger/euler.svg?branch=master)](https://travis-ci.org/rkoeninger/euler)
 
 # Project Euler Solutions
