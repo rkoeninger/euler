@@ -51,6 +51,7 @@ Solutions to several problems are listed by GitHub user [nayuki](https://github.
 | 41 | [Greatest pandigital prime](https://projecteuler.net/problem=41) | [euler41.factor](https://github.com/rkoeninger/euler/blob/master/src/euler41/euler41.factor) |
 | 42 | [Count of words with letters that add up to triangular numbers](https://projecteuler.net/problem=42) | [euler42.factor](https://github.com/rkoeninger/euler/blob/master/src/euler42/euler42.factor) |
 | 43 | [Sum of pandigitals with substrings divisble by successive primes](https://projecteuler.net/problem=43) | [euler43.factor](https://github.com/rkoeninger/euler/blob/master/src/euler43/euler43.factor) |
+| 44 | [Pentagonal number pair whose sum and difference are pentagonal](https://projecteuler.net/problem=44) | [euler44.factor](https://github.com/rkoeninger/euler/blob/master/src/euler44/euler44.factor) |
 | 45 | [Triangular number that is also pentagonal and hexagonal](https://projecteuler.net/problem=45) | [euler45.factor](https://github.com/rkoeninger/euler/blob/master/src/euler45/euler45.factor) |
 | 46 | [First number that invalidates Goldbach's other conjecture](https://projecteuler.net/problem=46) | [euler46.factor](https://github.com/rkoeninger/euler/blob/master/src/euler46/euler46.factor) |
 | 47 | [First of 4 consecutive numbers with 4 distinct prime factors](https://projecteuler.net/problem=47) | [euler47.factor](https://github.com/rkoeninger/euler/blob/master/src/euler47/euler47.factor) |
