@@ -6,18 +6,20 @@
 
 USE: kernel
 USE: math
-USE: math.constants
-USE: math.functions
 USE: prettyprint
 IN: euler2
 
+! fibonacci even-numbers recurrence relation:
+! 0, 2, 8, 34, 144 ...
+! f(n) = 4 * f(n - 1) + f(n - 2)
+
 : euler2 ( -- )
-    0 2
+    0 0 2
     [ dup 4000000 < ]
     [
-        dup [ + ] dip
-        phi 3 ^ * round >integer
+        rot over + -rot
+        swap over 4 * +
     ]
-    while drop . ;
+    while 2drop . ;
 
 MAIN: euler2
