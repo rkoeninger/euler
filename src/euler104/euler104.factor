@@ -10,9 +10,9 @@
 ! Given that F(k) is the first Fibonacci number for which the first
 ! nine digits AND the last nine digits are 1-9 pandigital, find k.
 
+USE: combinators.short-circuit
 USE: kernel
 USE: math
-USE: math.constants
 USE: math.functions
 USE: math.order
 USE: math.parser
@@ -22,22 +22,32 @@ USE: sorting
 USE: strings
 IN: euler104
 
-: pandigital? ( s -- ? )
-    [ <=> ] sort >string "123456789" = ;
+: pandigital? ( n -- ? )
+    number>string [ <=> ] sort >string "123456789" = ;
+
+: pandigital-tail? ( n -- ? )
+    1000000000 mod pandigital? ;
+
+: pandigital-head? ( n -- ? )
+    dup log10 >integer 8 - 10^ / >integer pandigital? ;
 
 : pandigital-ends? ( n -- ? )
-    number>string
-    [ 9 head pandigital? ]
-    [ 9 tail pandigital? ]
-    bi and ;
+    { [ 100000000 > ] [ pandigital-tail? ] [ pandigital-head? ] } 1&& ;
 
-: fibonacci ( k -- n )
-    phi swap ^ 5 sqrt / round >integer ; ! ^ function is returning 1/0 when phi is raised to high powers
+! fibonacci multiples-of-9 recurrence relation:
+! (every 12th number from the full fibonacci series)
+! 0, 144, 46368, 14930352 ...
+! f(n) = 322 * f(n - 1) - f(n - 2)
 
 : euler104 ( -- )
-    2750
-    [ dup fibonacci pandigital-ends? not ]
-    [ 1 + ]
-    while  . ;
+    12 0 144
+    [ dup pandigital-ends? not ]
+    [
+        swap over 322 * swap -
+        [ 12 + ] 2dip
+    ]
+    while 2drop . ;
+
+! : fibonacci ( n -- x ) 1 1 [ [ over ] dip swap 0 > ] [ swap over + [ 1 - ] 2dip ] while 2nip ;
 
 MAIN: euler104

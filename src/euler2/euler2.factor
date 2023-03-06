@@ -10,6 +10,7 @@ USE: prettyprint
 IN: euler2
 
 ! fibonacci even-numbers recurrence relation:
+! (every 3rd number from the full fibonacci series)
 ! 0, 2, 8, 34, 144 ...
 ! f(n) = 4 * f(n - 1) + f(n - 2)
 
