@@ -70,3 +70,4 @@ Solutions to several problems are listed by GitHub user [nayuki](https://github.
 | 94 | [Sum of perimeters of almost equilateral triangles with integer areas](https://projecteuler.net/problem=94) | [euler94.factor](https://github.com/rkoeninger/euler/blob/master/src/euler94/euler94.factor) |
 | 97 | [Last 10 digits of (28433×(2^7830457))+1](https://projecteuler.net/problem=97) | [euler97.factor](https://github.com/rkoeninger/euler/blob/master/src/euler97/euler97.factor) |
 | 100 | [Arranged probability](https://projecteuler.net/problem=100) | [euler100.factor](https://github.com/rkoeninger/euler/blob/master/src/euler100/euler100.factor) |
+| 102 | [Count of triangles containing origin](https://projecteuler.net/problem=102) | [euler102.factor](https://github.com/rkoeninger/euler/blob/master/src/euler102/euler102.factor) |
