@@ -23,7 +23,7 @@ jobs:
       - name: Copy Code into factor Folder
         run: cp -R src/. factor/work
       - name: Copy prob Script up from .github/workflows/
-        run: cp ./github/workflows/prob .
+        run: cp ./.github/workflows/prob .
       - name: Run Problems
         run: |
           ./prob  1  233168
