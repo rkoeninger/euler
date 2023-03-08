@@ -20,14 +20,15 @@ USE: sequences
 USE: sequences.extras
 IN: euler50
 
-: euler50 ( -- ) ! runs too slow for this size of search space; listener crashes
-    lprimes [ 100000 < ] lwhile list>array
+: euler50 ( -- )
+    lprimes [ 4000 < ] lwhile list>array
     all-subseqs
     [
-        dup sum
+        dup sum dup
         { [ 1000000 < ] [ prime? ] } 1&&
         [ swap length { } 2sequence ]
-        [ drop f ]
+        [ 2drop f ]
+        if
     ] map sift
     [ second ] supremum-by first . ;
 
