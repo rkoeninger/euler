@@ -19,7 +19,7 @@ jobs:
       - name: Download Tarball
         run: wget http://downloads.factorcode.org/releases/0.98/factor-linux-x86-64-0.98.tar.gz
       - name: Unpack Tarball
-        run: tar -xf factor-linux-x86-64-0.97.tar.gz
+        run: tar -xf factor-linux-x86-64-0.98.tar.gz
       - name: Copy Code into factor Folder
         run: cp -R src/. factor/work
       - name: Run Tests
