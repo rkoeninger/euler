@@ -24,9 +24,9 @@ jobs:
         run: cp -R src/. factor/work
       - name: Copy prob Script up from .github/workflows/
         run: cp ./.github/workflows/prob .
-      - run: ./prob  1  233168
       - name: Run Problems
         run: |
+          ./prob  1  233168
           ./prob  2  4613732
           ./prob  3  6857
           ./prob  4  906609
