@@ -88,8 +88,10 @@ jobs:
       - run: ./prob 79  73162890
       - run: ./prob 85  2772
       - run: ./prob 92  8581146
-      - run: (disabled) ./prob 94
+      - run: (disabled) ./prob  94  ???
         if: ${{ false }}
       - run: ./prob 97  8739992577
       - run: ./prob 100 756872327473
       - run: ./prob 102 228
+      - run: (disabled) ./prob 104  ???
+        if: ${{ false }}

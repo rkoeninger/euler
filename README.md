@@ -74,3 +74,4 @@ Solutions to several problems are listed by GitHub user [nayuki](https://github.
 | 97 | [Last 10 digits of (28433×(2^7830457))+1](https://projecteuler.net/problem=97) | [euler97.factor](https://github.com/rkoeninger/euler/blob/master/src/euler97/euler97.factor) |
 | 100 | [Arranged probability](https://projecteuler.net/problem=100) | [euler100.factor](https://github.com/rkoeninger/euler/blob/master/src/euler100/euler100.factor) |
 | 102 | [Count of triangles containing origin](https://projecteuler.net/problem=102) | [euler102.factor](https://github.com/rkoeninger/euler/blob/master/src/euler102/euler102.factor) |
+| 104 | [First fibonacci number with first 9 and last 9 digits are pandigital](https://projecteuler.net/problem=104) | [euler104.factor](https://github.com/rkoeninger/euler/blob/master/src/euler104/euler104.factor) |
