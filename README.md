@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/rkoeninger/euler.svg?branch=master)](https://travis-ci.org/rkoeninger/euler)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/rkoeninger/euler/ci.yml)](https://github.com/rkoeninger/euler/actions/workflows/ci.yml)
 
 # Project Euler Solutions
 
