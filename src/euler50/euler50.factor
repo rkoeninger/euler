@@ -13,6 +13,7 @@ USE: combinators.short-circuit
 USE: kernel
 USE: lists
 USE: lists.lazy
+USE: math
 USE: math.primes
 USE: math.primes.lists
 USE: prettyprint
