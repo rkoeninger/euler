@@ -58,6 +58,7 @@ Solutions to several problems are listed by GitHub user [nayuki](https://github.
 | 48 | [Last 10 digits of n^n, n = \[1..1000\]](https://projecteuler.net/problem=48) | [euler48.factor](https://github.com/rkoeninger/euler/blob/master/src/euler48/euler48.factor) |
 | 49 | [Conistently increasing 4-digit prime sequence](https://projecteuler.net/problem=49) | [euler49.factor](https://github.com/rkoeninger/euler/blob/master/src/euler49/euler49.factor) |
 | 50 | [Greatest prime < 1,000,000 that is sum of consecutive primes](https://projecteuler.net/problem=50) | [euler50.factor](https://github.com/rkoeninger/euler/blob/master/src/euler50/euler50.factor) |
+| 51 | [Find smallest prime that is part of substituted-digits family of size 8](https://projecteuler.net/problem=51) | [euler51.factor](https://github.com/rkoeninger/euler/blob/master/src/euler51/euler51.factor) |
 | 52 | [First number where 2n, 3n, 4n, 5n and 6n all have same digits](https://projecteuler.net/problem=52) | [euler52.factor](https://github.com/rkoeninger/euler/blob/master/src/euler52/euler52.factor) |
 | 53 | [Number of subsets size greater than 1,000,000 for sets size <= 100](https://projecteuler.net/problem=53) | [euler53.factor](https://github.com/rkoeninger/euler/blob/master/src/euler53/euler53.factor) |
 | 56 | [Greatest digit sum for a^b where a, b = \[1..99\]](https://projecteuler.net/problem=56) | [euler56.factor](https://github.com/rkoeninger/euler/blob/master/src/euler56/euler56.factor) |
