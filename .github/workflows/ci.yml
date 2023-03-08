@@ -13,7 +13,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       - name: Install Dependencies
-        run: sudo apt install libgtkglext1 libpangox-1.0-0
+        run: sudo apt install libgtkglext1 libpangox
       - name: Download Tarball
         run: wget http://downloads.factorcode.org/releases/0.97/factor-linux-x86-64-0.97.tar.gz
       - name: Unpack Tarball
