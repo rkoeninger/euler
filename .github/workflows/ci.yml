@@ -1,0 +1,24 @@
+name: CI
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      - name: Download Tarball
+        run: wget http://downloads.factorcode.org/releases/0.97/factor-linux-x86-64-0.97.tar.gz
+      - name: Unpack Tarball
+        run: tar -xf factor-linux-x86-64-0.97.tar.gz
+      - name: Copy Code into factor Folder
+        run: cp -R src/. factor/work
+      - name: Run Tests
+        run: |
+          ./prob  1  233168
+          ./prob  2  4613732
