@@ -7,8 +7,11 @@ RETURN_CODE=$?
 
 if [ "$RESULT" -ne "$2" ]; then
 	echo "ERROR"
-	echo $RESULT
+else
+	echo "SUCCESS"
 fi
+
+echo $RESULT
 
 popd > /dev/null
 
