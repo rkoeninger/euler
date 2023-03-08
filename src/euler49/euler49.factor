@@ -11,6 +11,7 @@
 ! What 12-digit number do you form by concatenating
 ! the three terms in this sequence?
 
+USE: combinators.short-circuit
 USE: kernel
 USE: math
 USE: math.combinatorics
