@@ -22,6 +22,8 @@ jobs:
         run: tar -xf factor-linux-x86-64-0.98.tar.gz
       - name: Copy Code into factor Folder
         run: cp -R src/. factor/work
+      - name: Copy prob Script up from .github/workflows/
+        run: cp ./github/workflows/prob .
       - name: Run Problems
         run: |
           ./prob  1  233168
@@ -68,7 +70,7 @@ jobs:
           ./prob 42  162
           ./prob 43  16695334890
           ./prob 45  1533776805
-#         ./prob 44  ???
+          # ./prob 44  ???
           ./prob 46  5777
           ./prob 47  134043
           ./prob 48  9110846700
@@ -87,7 +89,7 @@ jobs:
           ./prob 79  73162890
           ./prob 85  2772
           ./prob 92  8581146
-#         ./prob 94  518408346
+          # ./prob 94  518408346
           ./prob 97  8739992577
           ./prob 100 756872327473
           ./prob 102 228
