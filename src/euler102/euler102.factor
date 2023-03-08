@@ -14,6 +14,7 @@ USE: csv
 USE: io.encodings.utf8
 USE: kernel
 USE: locals
+USE: math
 USE: math.functions
 USE: math.parser
 USE: math.ranges
