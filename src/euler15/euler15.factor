@@ -3,14 +3,12 @@
 ! there are exactly 6 routes to the bottom right corner.
 ! How many such routes are there through a 20×20 grid?
 
-USE: io
 USE: kernel
 USE: math.combinatorics
-USE: present
+USE: prettyprint
 IN: euler15
 
 : euler15 ( -- )
-    40 20 nCk
-    present print ;
+    20 dup 2 * swap nCk . ;
 
 MAIN: euler15
