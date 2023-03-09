@@ -3,7 +3,6 @@
 
 USE: arrays
 USE: kernel
-USE: locals
 USE: math
 USE: math.ranges
 USE: prettyprint
@@ -16,18 +15,15 @@ IN: euler9
 ! b = m^2 - n^2
 ! a = 2nm
 
-: mn-space ( -- mns )
-    2 25 [a,b] [| m | m [1,b) [ m 2array ] map ] map concat ;
-
-: mn->triple ( m n -- c b a )
+: mn>triple ( m n -- c b a )
     [ [ sq ] bi@ + ]
     [ [ sq ] bi@ - abs ]
     [ 2 * * ]
     2tri ;
 
 : euler9 ( -- )
-    mn-space
-    [ first2 mn->triple 3array ] map
+    25 [1,b] dup cartesian-product concat
+    [ first2 mn>triple 3array ] map
     [ sum 1000 = ] find nip
     product . ;
 
