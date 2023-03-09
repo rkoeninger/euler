@@ -8,26 +8,18 @@ USE: prettyprint
 USE: sequences
 IN: euler14
 
-: collatz-step ( n -- m )
+: collatz-step ( x -- y )
     dup even?
     [ 2 / ]
     [ 3 * 1 + ]
     if ;
 
-: collatz-loop ( n x -- y )
+: collatz-loop ( n x -- n' y )
     [ dup 1 > ]
-    [
-        collatz-step
-        swap 1 + swap
-    ]
-    while
-    drop ;
-
-: collatz-length ( n -- y )
-    1 swap collatz-loop ;
+    [ collatz-step [ 1 + ] dip ] while ;
 
 : euler14 ( -- )
     1 1000000 [a,b) reverse
-    [ collatz-length ] supremum-by . ;
+    [| x | 1 x collatz-loop drop ] supremum-by . ;
 
 MAIN: euler14
