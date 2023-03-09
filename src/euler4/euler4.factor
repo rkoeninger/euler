@@ -2,18 +2,17 @@
 ! palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
 ! Find the largest palindrome made from the product of two 3-digit numbers.
 
-USE: io
 USE: kernel
 USE: math
-USE: math.order
+USE: math.functions
+USE: math.parser
 USE: math.ranges
-USE: present
+USE: prettyprint
 USE: sequences
-USE: vectors
 IN: euler4
 
-: palindrome? ( x -- ? )
-    present dup reverse = ;
+: palindrome? ( n -- ? )
+    number>string dup reverse = ;
 
 ! Generate progressively longer sequences to avoid
 ! duplicate pairs, cutting search space in half:
@@ -31,7 +30,6 @@ IN: euler4
     ]
     map concat
     [ palindrome? ] filter
-    supremum
-    present print ;
+    supremum . ;
 
 MAIN: euler4
