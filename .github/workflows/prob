@@ -6,10 +6,10 @@ RESULT=$(./factor -run=euler$1)
 RETURN_CODE=$?
 
 if [ "$RESULT" -ne "$2" ]; then
-	echo "prob $1 ERROR: result was $RESULT, but expected: $2"
+	echo "ERROR: result was $RESULT, but expected: $2"
+else
+	echo "SUCCESS: result was $RESULT"
 fi
-
-echo $RESULT
 
 popd > /dev/null
 
