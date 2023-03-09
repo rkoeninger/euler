@@ -6,13 +6,14 @@
 USE: kernel
 USE: math
 USE: math.functions
+USE: math.primes
 USE: prettyprint
 USE: sequences
 IN: euler5
 
 : euler5 ( -- )
-    { 2 3 5 7 11 13 17 19 } dup
-    [ 20 [ log ] bi@ swap / >integer ] map
+    20 primes-upto dup
+    [ 20 swap logn >integer ] map
     [ ^ ] 2map
     product . ;
 
