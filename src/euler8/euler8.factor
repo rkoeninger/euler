@@ -4,6 +4,7 @@
 USE: io.encodings.utf8
 USE: io.files
 USE: kernel
+USE: math
 USE: math.parser
 USE: math.ranges
 USE: memoize
