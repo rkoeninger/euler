@@ -5,6 +5,7 @@ USE: io.encodings.utf8
 USE: io.files
 USE: math
 USE: math.functions
+USE: math.parser
 USE: prettyprint
 USE: sequences
 IN: euler13
