@@ -2,6 +2,7 @@
 ! produces the longest Collatz sequence?
 
 USE: kernel
+USE: locals
 USE: math
 USE: math.ranges
 USE: prettyprint
