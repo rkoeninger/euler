@@ -3,7 +3,8 @@
 
 USE: io.encodings.utf8
 USE: io.files
-USE: math.parser
+USE: math
+USE: math.functions
 USE: prettyprint
 USE: sequences
 IN: euler13
@@ -11,6 +12,6 @@ IN: euler13
 : euler13 ( -- )
     "./work/euler13/bignumbers.txt" utf8 file-lines
     [ string>number ] map-sum
-    number>string 10 head string>number . ;
+    dup log10 ceiling 10 - 10^ /i . ;
 
 MAIN: euler13
