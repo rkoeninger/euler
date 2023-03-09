@@ -55,7 +55,7 @@ Solutions to several problems are listed by GitHub user [nayuki](https://github.
 | 45 | [Triangular number that is also pentagonal and hexagonal](https://projecteuler.net/problem=45) | [euler45.factor](https://github.com/rkoeninger/euler/blob/master/src/euler45/euler45.factor) |
 | 46 | [First number that invalidates Goldbach's other conjecture](https://projecteuler.net/problem=46) | [euler46.factor](https://github.com/rkoeninger/euler/blob/master/src/euler46/euler46.factor) |
 | 47 | [First of 4 consecutive numbers with 4 distinct prime factors](https://projecteuler.net/problem=47) | [euler47.factor](https://github.com/rkoeninger/euler/blob/master/src/euler47/euler47.factor) |
-| 48 | [Last 10 digits of n^n, n = \[1..1000\]](https://projecteuler.net/problem=48) | [euler48.factor](https://github.com/rkoeninger/euler/blob/master/src/euler48/euler48.factor) |
+| 48 | [Last 10 digits of sum(n^n), n = \[1..1000\]](https://projecteuler.net/problem=48) | [euler48.factor](https://github.com/rkoeninger/euler/blob/master/src/euler48/euler48.factor) |
 | 49 | [Conistently increasing 4-digit prime sequence](https://projecteuler.net/problem=49) | [euler49.factor](https://github.com/rkoeninger/euler/blob/master/src/euler49/euler49.factor) |
 | 50 | [Greatest prime < 1,000,000 that is sum of consecutive primes](https://projecteuler.net/problem=50) | [euler50.factor](https://github.com/rkoeninger/euler/blob/master/src/euler50/euler50.factor) |
 | 51 | [Find smallest prime that is part of substituted-digits family of size 8](https://projecteuler.net/problem=51) | [euler51.factor](https://github.com/rkoeninger/euler/blob/master/src/euler51/euler51.factor) |
