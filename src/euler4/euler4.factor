@@ -3,12 +3,14 @@
 ! Find the largest palindrome made from the product of two 3-digit numbers.
 
 USE: kernel
+USE: locals
 USE: math
 USE: math.functions
 USE: math.parser
 USE: math.ranges
 USE: prettyprint
 USE: sequences
+USE: sequences.extras
 IN: euler4
 
 : palindrome? ( n -- ? )
@@ -24,12 +26,7 @@ IN: euler4
 
 : euler4 ( -- )
     100 1000 [a,b)
-    [
-        dup 100 swap [a,b]
-        swap [ * ] curry map
-    ]
-    map concat
-    [ palindrome? ] filter
-    supremum . ;
+    [| n | 100 n [a,b] [ n * ] map ] map-concat
+    [ palindrome? ] filter supremum . ;
 
 MAIN: euler4
