@@ -13,12 +13,12 @@ USE: memoize
 USE: prettyprint
 USE: sequences
 USE: sequences.extras
-USE: splitting
+USE: splitting.extras
 IN: euler11
 
-MEMO: load-grid ( -- g )
+MEMO: grid ( -- g )
     "./work/euler11/p11_grid.txt" utf8 file-lines
-    [ { 32 } split [ string>number ] map ] map ;
+    [ { 32 } split-harvest [ string>number ] map ] map ;
 
 :: transpose ( g -- g' )
     g first length [0,b)
@@ -34,14 +34,11 @@ MEMO: load-grid ( -- g )
     seq length 3 - [0,b) [ dup 4 + seq subseq ] map ;
 
 : euler11 ( -- )
-    load-grid
-    {
-        [ ]
-        [ transpose ]
-        [ diagonal-padding transpose ]
-        [ [ reverse ] map diagonal-padding transpose ]
-    }
-    cleave 4array concat
+    grid
+    grid transpose
+    grid diagonal-padding transpose
+    grid [ reverse ] map diagonal-padding transpose
+    4array concat
     [ 4subseqs ] map-concat
     [ product ] map supremum . ;
 
