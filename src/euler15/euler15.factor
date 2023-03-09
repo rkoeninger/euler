@@ -4,6 +4,7 @@
 ! How many such routes are there through a 20×20 grid?
 
 USE: kernel
+USE: math
 USE: math.combinatorics
 USE: prettyprint
 IN: euler15

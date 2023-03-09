@@ -1,7 +1,6 @@
 ! What is the sum of the digits of the number 2^1000?
 
 USE: kernel
-USE: math
 USE: math.functions
 USE: math.parser
 USE: prettyprint
