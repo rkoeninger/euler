@@ -3,6 +3,7 @@
 
 USE: io.encodings.utf8
 USE: io.files
+USE: kernel
 USE: math
 USE: math.functions
 USE: math.parser
