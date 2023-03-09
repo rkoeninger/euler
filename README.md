@@ -1,4 +1,4 @@
-[![Build Status](https://img.shields.io/github/actions/workflow/status/rkoeninger/euler/ci.yml)](https://github.com/rkoeninger/euler/actions/workflows/ci.yml)
+[![Build Status](https://github.com/rkoeninger/euler/actions/workflows/ci.yml/badge.svg)](https://github.com/rkoeninger/euler/actions/workflows/ci.yml)
 
 # Project Euler Solutions
 
