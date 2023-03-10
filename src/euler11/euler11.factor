@@ -20,9 +20,9 @@ MEMO: grid ( -- g )
     "./work/euler11/p11_grid.txt" utf8 file-lines
     [ { 32 } split-harvest [ string>number ] map ] map ;
 
-:: transpose ( g -- g' )
-    g first length [0,b)
-    [| n | g [| row | n row nth ] map ] map ;
+: transpose ( g -- g' )
+    dup [ first length [0,b) ] dip
+    [ nth ] cartesian-map ;
 
 : zeroes ( g -- zs )
     length 1 - 0 <array> ;
@@ -30,8 +30,8 @@ MEMO: grid ( -- g )
 :: diagonal-padding ( g -- g' )
     g [ g zeroes append ] map [ neg rotate ] map-index ;
 
-:: 4subseqs ( seq -- seqs )
-    seq length 3 - [0,b) [ dup 4 + seq subseq ] map ;
+: 4subseqs ( seq -- seqs )
+    [ length 4 = ] filter-all-subseqs ;
 
 : euler11 ( -- )
     grid
