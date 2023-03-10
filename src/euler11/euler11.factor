@@ -31,7 +31,7 @@ MEMO: grid ( -- g )
     g [ g zeroes append ] map [ neg rotate ] map-index ;
 
 : 4subseqs ( seq -- seqs )
-    [ length 4 = ] filter-all-subseqs ;
+    all-subseqs [ length 4 = ] filter ;
 
 : euler11 ( -- )
     grid
