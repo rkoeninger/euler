@@ -21,8 +21,8 @@ MEMO: grid ( -- g )
     [ { 32 } split-harvest [ string>number ] map ] map ;
 
 : transpose ( g -- g' )
-    dup [ first length [0,b) ] dip
-    [ nth ] cartesian-map ;
+    dup first length [0,b)
+    swap [ nth ] cartesian-map ;
 
 : zeroes ( g -- zs )
     length 1 - 0 <array> ;
