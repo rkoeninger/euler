@@ -19,7 +19,7 @@ IN: euler12
 :: divisor-count ( x -- n )
     x sqrt >integer [1,b]
     [ x swap divisor? ] count 2 *
-    x sqrt integer? -1 0 ? + ;
+    x sqrt integer? [ 1 - ] when ;
 
 : euler12 ( -- )
     100000 [1,b]
