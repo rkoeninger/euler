@@ -1,22 +1,16 @@
 ! How many Sundays fell on the first of the month during the twentieth century?
 
 USE: calendar
-USE: kernel
-USE: math
+USE: lists
+USE: lists.lazy
 USE: math.order
 USE: prettyprint
 IN: euler19
 
 : euler19 ( -- )
-    0
-    1901 1 1 <date>
-    [ dup 2001 1 1 <date> before? ]
-    [
-        dup sunday?
-        [ [ 1 + ] dip ]
-        when
-        1 months time+
-    ]
-    while drop . ;
+    1901 <year>
+    [ 1 months time+ ] lfrom-by
+    [ 2001 <year> before? ] lwhile
+    [ sunday? ] lfilter llength . ;
 
 MAIN: euler19
