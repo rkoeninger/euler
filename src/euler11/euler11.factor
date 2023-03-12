@@ -4,10 +4,10 @@
 USE: io.encodings.utf8
 USE: io.files
 USE: arrays
+USE: grouping
 USE: kernel
 USE: locals
 USE: math
-USE: math.ranges
 USE: math.parser
 USE: memoize
 USE: prettyprint
@@ -21,8 +21,7 @@ MEMO: grid ( -- g )
     [ { 32 } split-harvest [ string>number ] map ] map ;
 
 : transpose ( g -- g' )
-    dup first length [0,b)
-    swap [ nth ] cartesian-map ;
+    [ round-robin ] [ length ] bi group ;
 
 : zeroes ( g -- zs )
     length 1 - 0 <array> ;
