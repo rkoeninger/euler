@@ -1,27 +1,23 @@
-! Let d(n) be defined as the sum of proper divisors of n
-! (numbers less than n which divide evenly into n).
+! Let d(n) be defined as the sum of proper divisors of n less than n.
 ! If d(a) = b and d(b) = a, where a ≠ b, then a and b are
 ! an amicable pair and each of a and b are called amicable numbers.
-
-! For example, the proper divisors of 220 are
-! 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 and 110; therefore d(220) = 284.
-! The proper divisors of 284 are 1, 2, 4, 71 and 142; so d(284) = 220.
 
 ! Evaluate the sum of all the amicable numbers under 10000.
 
 USE: kernel
 USE: math.primes.factors
 USE: math.ranges
+USE: memoize
 USE: prettyprint
 USE: sequences
 IN: euler21
 
-: divisor-sum ( x -- n )
+MEMO: divisors-sum ( x -- n )
     divisors but-last sum ;
 
 : amicable? ( x -- ? )
-    [ divisor-sum ] keep swap
-    [ = not ] [ divisor-sum = ] 2bi and ;
+    dup divisors-sum
+    [ = not ] [ divisors-sum = ] 2bi and ;
 
 : euler21 ( -- )
     2 10000 [a,b)
