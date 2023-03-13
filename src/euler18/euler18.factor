@@ -26,7 +26,8 @@ MEMO: path-length ( -- l )
 : make-path ( n -- path )
     make-bits [ 1 0 ? ] map
     path-length 0 pad-tail
-    cum-sum ;
+    cum-sum
+    0 prefix ;
 
 : path-value ( path -- x )
     grid [ nth ] 2map-sum ;
