@@ -4,7 +4,6 @@ USE: kernel
 USE: math
 USE: math.functions
 USE: prettyprint
-USE: sequences
 IN: euler25
 
 : euler25 ( -- )
