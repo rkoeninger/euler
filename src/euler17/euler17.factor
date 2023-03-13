@@ -2,68 +2,45 @@
 ! written out in words, how many letters would be used?
 
 USE: kernel
+USE: generalizations
+USE: locals
 USE: math
 USE: math.functions
 USE: math.ranges
+USE: memoize
 USE: prettyprint
 USE: sequences
 IN: euler17
 
-: one ( x -- n )
-    10 mod
-    { "" "one" "two" "three" "four" "five" "six" "seven" "eight" "nine" }
-    nth ;
+MEMO: words1 ( n -- l )
+    { ""        "one"     "two"       "three"    "four"
+      "five"    "six"     "seven"     "eight"    "nine"
+      "ten"     "eleven"  "twelve"    "thirteen" "fourteen"
+      "fifteen" "sixteen" "seventeen" "eigtheen" "nineteen" }
+    nth length ;
 
-: teen ( x -- n )
-    10 mod
-    { "ten" "eleven" "twelve" "thirteen" "fourteen" "fifteen" "sixteen" "seventeen" "eigtheen" "nineteen" }
-    nth ;
+MEMO: words10 ( n -- l )
+    { ""      ""      "twenty"  "thirty" "forty"
+      "fifty" "sixty" "seventy" "eighty" "ninety" }
+    nth length ;
 
-: under-twenty ( x -- n )
-    100 mod
-    dup 10 <
-    [ one ]
-    [ teen ]
+: words<100 ( n -- l )
+    dup 20 <
+    [ words1 ]
+    [ 10 /mod [ words10 ] [ words1 ] bi* + ]
     if ;
 
-: over-twenty ( x -- n )
-    100 mod 10 /mod one
-    swap
-    { "" "" "twenty" "thirty" "forty" "fifty" "sixty" "seventy" "eighty" "ninety" }
-    nth append ;
+: words<1000 ( n -- l )
+    100 /mod
+    [ [ 0 > ] [ 0 = not ] bi* and "and" length 0 ? ]
+    [ drop 0 > "hundred" length 0 ? ]
+    [ [ words1 ] [ words<100 ] bi* + ]
+    2tri 3 nsum ;
 
-: tens ( x -- n )
-    dup 100 mod 10 /i 2 <
-    [ under-twenty ]
-    [ over-twenty ]
-    if ;
-
-: hundred ( x -- n )
-    1000 mod 100 /i
-    one
-    dup length 0 >
-    [ "hundred" append ]
-    when ;
-
-: thousand ( x -- n )
-    1000 >=
-    [ "one" "thousand" append ]
-    [ "" ]
-    if ;
-
-: letters ( x -- n )
-    dup [ 100 >= ] [ 100 divisor? not ] bi and
-    [ "and" ]
-    [ "" ]
-    if
-    swap
-    [ thousand ]
-    [ hundred ]
-    [ tens ]
-    tri append append append ;
+: word1000 ( -- l )
+    "onethousand" length ;
 
 : euler17 ( -- )
-    1000 [1,b]
-    [ letters ] map concat length . ;
+    1000 [1,b) [ words<1000 ] map-sum word1000 + . ;
 
 MAIN: euler17
