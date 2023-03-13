@@ -19,7 +19,7 @@ IN: euler22
 : euler22 ( -- )
     "./work/euler22/names.txt" utf8 file>csv concat
     [ <=> ] sort
-    [ 1 + swap [ 64 - ] map sum * ] map-index
+    [ 1 + swap [ 64 - ] map-sum * ] map-index
     sum . ;
 
 MAIN: euler22
