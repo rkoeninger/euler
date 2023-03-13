@@ -10,22 +10,18 @@
 ! Evaluate the sum of all the amicable numbers under 10000.
 
 USE: kernel
-USE: math.functions
+USE: math.primes.factors
 USE: math.ranges
 USE: prettyprint
 USE: sequences
 IN: euler21
 
 : divisor-sum ( x -- n )
-    dup [1,b)
-    swap [ swap divisor? ] curry
-    filter sum ;
+    divisors but-last sum ;
 
 : amicable? ( x -- ? )
-    dup divisor-sum
-    [ = not ]
-    [ divisor-sum = ]
-    2bi and ;
+    [ divisor-sum ] keep swap
+    [ = not ] [ divisor-sum = ] 2bi and ;
 
 : euler21 ( -- )
     2 10000 [a,b)
