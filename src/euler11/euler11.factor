@@ -11,6 +11,7 @@ USE: math.parser
 USE: memoize
 USE: prettyprint
 USE: sequences
+USE: sequences.extras
 USE: splitting.extras
 IN: euler11
 
