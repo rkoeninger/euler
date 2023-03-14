@@ -5,8 +5,11 @@ pushd factor > /dev/null
 RESULT=$(./factor -run=euler$1)
 RETURN_CODE=$?
 
-if [ "$RESULT" -ne "$2" ]; then
+if [ "$RETURN_CODE" -ne "0" ]; then
+	echo "FAIL: return code was $RETURN_CODE"
+elif [ "$RESULT" -ne "$2" ]; then
 	echo "ERROR: result was $RESULT, but expected: $2"
+	RETURN_CODE=1
 else
 	echo "SUCCESS: result was $RESULT"
 fi
