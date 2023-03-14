@@ -3,15 +3,11 @@
 ! Find the sum of all the multiples of 3 or 5 below 1000.
 
 USE: kernel
-USE: math.functions
-USE: math.ranges
+USE: math
 USE: prettyprint
-USE: sequences
 IN: euler1
 
 : euler1 ( -- )
-    1000 [0,b)
-    [ [ 3 divisor? ] [ 5 divisor? ] bi or ] filter
-    sum . ;
+    3 5 15 [ dup 999 swap /i dup 1 + * 2 / * ] tri@ - + . ;
 
 MAIN: euler1
