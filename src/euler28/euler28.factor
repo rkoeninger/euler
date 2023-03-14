@@ -27,6 +27,6 @@ IN: euler28
         [ 3 * ]
         bi - 4 *
     ]
-    map sum 1 + . ;
+    map-sum 1 + . ;
 
 MAIN: euler28
