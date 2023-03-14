@@ -4,18 +4,18 @@
 USE: kernel
 USE: math
 USE: math.functions
+USE: math.parser
 USE: math.ranges
-USE: present
 USE: prettyprint
 USE: sequences
 IN: euler30
 
 : digits ( n -- seq )
-    present [ 48 - ] map ;
+    number>string string>digits ;
 
 : euler30 ( -- )
     2 200000 [a,b)
-    [ dup digits [ 5 ^ ] map sum = ] filter
+    [ dup digits [ 5 ^ ] map-sum = ] filter
     sum . ;
 
 MAIN: euler30
