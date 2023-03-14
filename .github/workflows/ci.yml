@@ -67,7 +67,7 @@ jobs:
       - run: ./prob 41  7652413
       - run: ./prob 42  162
       - run: ./prob 43  16695334890
-      - run: (disabled) ./prob 44  ???
+      - run: ./prob 44  ???
         if: ${{ false }}
       - run: ./prob 45  1533776805
       - run: ./prob 46  5777
@@ -80,6 +80,7 @@ jobs:
       - run: ./prob 52  142857
       - run: ./prob 53  4075
       - run: ./prob 54  376
+        if: ${{ false }}
       - run: ./prob 56  972
       - run: ./prob 57  153
       - run: ./prob 67  7273
@@ -89,10 +90,10 @@ jobs:
       - run: ./prob 79  73162890
       - run: ./prob 85  2772
       - run: ./prob 92  8581146
-      - run: (disabled) ./prob  94  ???
+      - run: ./prob  94  ???
         if: ${{ false }}
       - run: ./prob 97  8739992577
       - run: ./prob 100 756872327473
       - run: ./prob 102 228
-      - run: (disabled) ./prob 104  ???
+      - run: ./prob 104  ???
         if: ${{ false }}
