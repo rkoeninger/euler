@@ -1,22 +1,23 @@
-! Find the value of d < 1000 for which 1/d contains the longest recurring
-! cycle in its decimal fraction part.
+! Find the value of d < 1000 for which 1/d contains the
+! longest recurring cycle in its decimal fraction part.
 
+USE: hash-sets.numbers
 USE: kernel
 USE: locals
 USE: math
-USE: math.functions
-USE: math.ranges
+USE: math.primes
 USE: prettyprint
 USE: sequences
+USE: sets
 IN: euler26
 
-:: cycle-length ( denom -- n )
-    1000 [1,b]
-    [ 10^ denom mod 1 = ] find
-    nip ;
+:: cycle-length ( d -- n )
+    2 <number-hash-set> 1
+    [ 2dup swap ?adjoin ]
+    [ 10 * d mod ]
+    while drop cardinality ;
 
 : euler26 ( -- )
-    1000 [1,b)
-    [ cycle-length dup 0 ? ] supremum-by . ;
+    1000 primes-upto [ cycle-length ] supremum-by . ;
 
 MAIN: euler26
