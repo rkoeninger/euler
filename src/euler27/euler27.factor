@@ -5,26 +5,21 @@
 ! primes for consecutive values of n, starting with n = 0.
 
 USE: kernel
+USE: lists
+USE: lists.lazy
 USE: locals
 USE: math
-USE: math.functions
 USE: math.primes
 USE: math.ranges
 USE: prettyprint
 USE: sequences
 IN: euler27
 
-: quad ( b a n -- x )
-    dup 2 ^ -rot * + + ;
-
-:: prime-count ( b a -- num )
-    0
-    [ dup b a rot quad prime? ]
-    [ 1 + ]
-    while ;
+:: prime-count ( a b -- l )
+    0 lfrom [| n | n a + n * b + prime? ] lwhile llength ;
 
 : euler27 ( -- )
-    -1000 1000 2dup (a,b) -rot [a,b]
+    -1000 1000 [ (a,b) ] [ [a,b] ] 2bi
     cartesian-product concat
     [ first2 prime-count ] supremum-by
     first2 * . ;
