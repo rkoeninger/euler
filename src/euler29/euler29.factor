@@ -12,6 +12,6 @@ IN: euler29
 : euler29 ( -- )
     2 100 [a,b]
     dup [ ^ ] cartesian-map concat
-    members length . ;
+    cardinality . ;
 
 MAIN: euler29
