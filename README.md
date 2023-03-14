@@ -4,7 +4,7 @@
 
 All solutions are provided in [Factor](https://factorcode.org/), a dynamically typed, stack-oriented, concatenative language that offers a different perspective on functional programming.
 
-Solutions to several problems are listed by GitHub user [nayuki](https://github.com/nayuki) at [this link](https://github.com/nayuki/Project-Euler-solutions/blob/master/Answers.txt).
+Factor's bundled library includes tons of helpful "vocabularies" like `math.combinatorics` and `math.primes`, some of which would solve a problem with single word so I avoid making full use of them until I've implemented a concept at least once. For instance, the first time finding the prime factors of a number comes up, I'll write the code out myself, but if it comes up again in later problems, I'll just use `math.primes.factors`.
 
 | #  | Descripion | Code |
 |---:|------------|------|
