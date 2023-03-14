@@ -61,6 +61,7 @@ Factor's bundled library includes tons of helpful "vocabularies" like `math.comb
 | 51 | [Find smallest prime that is part of substituted-digits family of size 8](https://projecteuler.net/problem=51) | [euler51.factor](https://github.com/rkoeninger/euler/blob/master/src/euler51/euler51.factor) |
 | 52 | [First number where 2n, 3n, 4n, 5n and 6n all have same digits](https://projecteuler.net/problem=52) | [euler52.factor](https://github.com/rkoeninger/euler/blob/master/src/euler52/euler52.factor) |
 | 53 | [Number of subsets size greater than 1,000,000 for sets size <= 100](https://projecteuler.net/problem=53) | [euler53.factor](https://github.com/rkoeninger/euler/blob/master/src/euler53/euler53.factor) |
+| 54 | [Determine winning poker hands](https://projecteuler.net/problem=54) | [euler54.factor](https://github.com/rkoeninger/euler/blob/master/src/euler54/euler54.factor) |
 | 56 | [Greatest digit sum for a^b where a, b = \[1..99\]](https://projecteuler.net/problem=56) | [euler56.factor](https://github.com/rkoeninger/euler/blob/master/src/euler56/euler56.factor) |
 | 57 | [Esitmations of sqrt(2) that have greater numerator](https://projecteuler.net/problem=57) | [euler57.factor](https://github.com/rkoeninger/euler/blob/master/src/euler57/euler57.factor) |
 | 67 | [Max value path through 100-row triangluar grid](https://projecteuler.net/problem=67) | [euler67.factor](https://github.com/rkoeninger/euler/blob/master/src/euler67/euler67.factor) |

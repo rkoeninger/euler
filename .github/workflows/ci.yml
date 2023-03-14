@@ -67,9 +67,9 @@ jobs:
       - run: ./prob 41  7652413
       - run: ./prob 42  162
       - run: ./prob 43  16695334890
-      - run: ./prob 45  1533776805
       - run: (disabled) ./prob 44  ???
         if: ${{ false }}
+      - run: ./prob 45  1533776805
       - run: ./prob 46  5777
       - run: ./prob 47  134043
       - run: ./prob 48  9110846700
@@ -79,6 +79,7 @@ jobs:
       - run: ./prob 51  121313
       - run: ./prob 52  142857
       - run: ./prob 53  4075
+      - run: ./prob 54  376
       - run: ./prob 56  972
       - run: ./prob 57  153
       - run: ./prob 67  7273

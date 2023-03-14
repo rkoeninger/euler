@@ -58,9 +58,11 @@
 USE: arrays
 USE: assocs
 USE: combinators
+USE: combinators.short-circuit
 USE: io.encodings.utf8
 USE: io.files
 USE: kernel
+USE: locals
 USE: math
 USE: math.parser
 USE: math.ranges
@@ -72,37 +74,54 @@ USE: sorting
 USE: splitting.extras
 IN: euler54
 
+: of-a-kind-counts ( h -- d )
+    [ first ] map histogram values ;
+
 : full-house? ( h -- ? )
-    [ first ] map histogram values
-    [ 2 swap member? ] [ 3 swap member? ] bi and ;
+    of-a-kind-counts [ 2 swap member? ] [ 3 swap member? ] bi and ;
 
 : pair? ( h -- ? )
-    [ first ] map histogram values 2 swap member? ;
+    of-a-kind-counts 2 swap member? ;
 
 : 2-pair? ( h -- ? )
-    [ first ] map histogram values
-    histogram 2 swap at 2 = ;
+    of-a-kind-counts histogram 2 of 2 = ;
 
 : 3-of-a-kind? ( h -- ? )
-    [ first ] map histogram values 3 swap member? ;
+    of-a-kind-counts 3 swap member? ;
 
 : 4-of-a-kind? ( h -- ? )
-    [ first ] map histogram values 4 swap member? ;
+    of-a-kind-counts 4 swap member? ;
 
-: straight? ( h -- ? )
-    [ first ] map
-    natural-sort
+: straight-aces-high? ( rs -- ? )
     [ first dup 4 + [a,b] ] keep
     [ = ] 2all? ;
+
+: sub-aces-low ( rs -- rs' )
+    [| r | r 14 = 1 r ? ] map natural-sort ;
+
+: straight-aces-low? ( rs -- ? )
+    sub-aces-low straight-aces-high? ;
+
+: straight? ( h -- ? )
+    [ first ] map natural-sort
+    { [ straight-aces-high? ] [ straight-aces-low? ] } 1|| ;
+
+: straight-requires-aces-low? ( h -- ? )
+    [ first ] map natural-sort
+    { [ straight-aces-high? not ] [ straight-aces-low? ] } 1&& ;
 
 : flush? ( h -- ? )
     [ second ] map cardinality 1 = ;
 
 : straight-flush? ( h -- ? )
-    [ straight? ] [ flush? ] bi and ;
+    { [ straight? ] [ flush? ] } 1&& ;
 
 : royal-flush? ( h -- ? )
-    [ straight-flush? ] [ [ first 14 = ] any? ] bi and ;
+    {
+        [ straight-flush? ]
+        [ [ first 14 = ] any? ]
+        [ [ first 10 = ] any? ]
+    } 1&& ;
 
 : classify-hand ( h -- n )
     {
@@ -118,8 +137,22 @@ IN: euler54
         [ drop 0 ]
     } cond ;
 
-: player1-wins ( h1 h2 -- ? )
-    [ classify-hand ] bi@ > ;
+: sorted-ranks ( h -- rs )
+    dup straight-requires-aces-low?
+    [ [ first ] map sub-aces-low natural-sort reverse ]
+    [ [ first ] map natural-sort reverse ]
+    if ;
+
+: compare-ranks ( rs1 rs2 -- ? )
+    [ - ] 2map [ 0 = not ] find nip ;
+
+:: player1-wins ( h1 h2 -- ? )
+    h1 h2 [ classify-hand ] bi@ -
+    {
+        { [ dup 0 > ] [ drop t ] }
+        { [ dup 0 < ] [ drop f ] }
+        [ drop h1 h2 [ sorted-ranks ] bi@ compare-ranks 0 > ]
+    } cond ;
 
 : parse-rank ( s -- rank )
     1 head
@@ -139,6 +172,6 @@ IN: euler54
 
 : euler54 ( -- )
     "./work/euler54/p054_poker.txt" utf8 file-lines
-    [ parse-line player1-wins ] count ;
+    [ parse-line player1-wins ] count . ;
 
 MAIN: euler54
