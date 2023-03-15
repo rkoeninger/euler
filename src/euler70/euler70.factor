@@ -21,7 +21,7 @@ IN: euler70
 : permutation? ( x y -- ? )
     {
         [ [ log10 >integer ] bi@ = ]
-        [ [ number>string [ <=> ] sort ] bi@ = ]
+        [ [ number>string natural-sort ] bi@ = ]
     } 2&& ;
 
 : euler70 ( -- )
