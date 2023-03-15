@@ -12,6 +12,7 @@ USE: memoize
 USE: prettyprint
 USE: sequences
 USE: sequences.extras
+USE: sequences.generalizations
 USE: splitting.extras
 IN: euler11
 
