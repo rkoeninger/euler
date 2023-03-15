@@ -22,19 +22,16 @@ USE: kernel
 USE: math
 USE: math.functions
 USE: math.parser
-USE: math.ranges
 USE: prettyprint
 USE: sequences
 IN: euler57
 
-: numerator-greater? ( n -- ? )
-    1 2 / swap
-    [ 2 + 1 swap / ] times
-    1 + >fraction
-    [ number>string length ] bi@ > ;
+: numerator-greater? ( a/b -- ? )
+    >fraction [ number>string length ] bi@ > ;
 
 : euler57 ( -- )
-    1000 [1,b]
+    0 2 recip
+    [ over 1000 < ] [ [ 1 + ] [ 2 + recip ] bi* dup 1 + ] produce 2nip
     [ numerator-greater? ] count . ;
 
 MAIN: euler57
