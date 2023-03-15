@@ -14,6 +14,7 @@ USE: kernel
 USE: locals
 USE: math
 USE: math.functions
+USE: math.quadratic
 USE: math.ranges
 USE: prettyprint
 USE: sequences
