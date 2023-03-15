@@ -13,6 +13,7 @@ USE: memoize
 USE: prettyprint
 USE: sequences
 USE: sequences.extras
+USE: sequences.generalizations
 USE: splitting.extras
 IN: euler11
 
@@ -32,7 +33,7 @@ MEMO: zeroes ( -- zs )
     grid flip
     grid diagonal-padding flip
     grid [ reverse ] map diagonal-padding flip
-    4array concat
+    4 nappend
     [ 4 clump ] map-concat
     [ product ] map supremum . ;
 
