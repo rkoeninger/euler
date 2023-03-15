@@ -7,6 +7,7 @@ RETURN_CODE=$?
 
 if [ "$RETURN_CODE" -ne "0" ]; then
 	echo "FAIL: return code was $RETURN_CODE"
+	echo "$RESULT"
 elif [ "$RESULT" -ne "$2" ]; then
 	echo "ERROR: result was $RESULT, but expected: $2"
 	RETURN_CODE=1
