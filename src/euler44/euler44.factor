@@ -21,9 +21,15 @@ USE: sequences
 USE: sequences.extras
 IN: euler44
 
+: pentagonal ( x -- p )
+    dup sq 3 * swap - 2/ ; inline
+
+: pentagonal? ( x -- ? )
+    24 * 1 + sqrt 1 + { [ dup floor = ] [ >integer 6 divisor? ] } 1&& ; inline
+
 : euler44 ( -- )
-    2 10000 [a,b] [| j | j [1,b) [| k | j k [ dup sq 3 * swap - 2/ ] bi@ 2array ] map ] map-concat
-    [ first2 +- 2array [ 24 * 1 + sqrt 1 + { [ dup floor = ] [ >integer 6 divisor? ] } 1&& ] all? ] filter
+    2 5000 [a,b] [| j | j [1,b) [| k | j k [ pentagonal ] bi@ 2array ] map ] map-concat
+    [ first2 +- 2array [ pentagonal? ] all? ] filter
     [ first2 - abs ] map infimum . ;
 
 MAIN: euler44
