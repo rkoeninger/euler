@@ -1,9 +1,10 @@
 ! Find the greatest product of four colinear numbers
 ! (up, down, left, right, or diagonally) in the grid in "p11_grid.txt"?
 
+USE: arrays
 USE: io.encodings.utf8
 USE: io.files
-USE: arrays
+USE: grouping
 USE: kernel
 USE: locals
 USE: math
@@ -26,16 +27,13 @@ MEMO: zeroes ( -- zs )
     [ zeroes append ] map
     [ neg rotate ] map-index ;
 
-: 4subseqs ( seq -- seqs )
-    all-subseqs [ length 4 = ] filter ;
-
 : euler11 ( -- )
     grid
     grid flip
     grid diagonal-padding flip
     grid [ reverse ] map diagonal-padding flip
     4array concat
-    [ 4subseqs ] map-concat
+    [ 4 clump ] map-concat
     [ product ] map supremum . ;
 
 MAIN: euler11
