@@ -34,7 +34,7 @@ MEMO: zeroes ( -- zs )
     grid flip
     grid diagonal-padding flip
     grid [ reverse ] map diagonal-padding flip
-    4array concat
+    4 nappend
     [ 4subseqs ] map-concat
     [ product ] map supremum . ;
 
