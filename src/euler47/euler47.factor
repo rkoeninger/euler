@@ -1,59 +1,21 @@
-! The first two consecutive numbers to have two distinct
-! prime factors are:
-
-! 14 = 2 × 7
-! 15 = 3 × 5
-
-! The first three consecutive numbers to have three distinct
-! prime factors are:
-
-! 644 = 2² × 7 × 23
-! 645 = 3 × 5 × 43
-! 646 = 2 × 17 × 19
-
-! Find the first four consecutive integers to have four distinct
+! The first 2 consecutive numbers to have 2 distinct prime factors
+! are 14 = 2 × 7, 15 = 3 × 5
+! The first 3 consecutive numbers to have 3 distinct prime factors
+! are 644 = 2² × 7 × 23, 645 = 3 × 5 × 43, 646 = 2 × 17 × 19
+! Find the first 4 consecutive integers to have 4 distinct
 ! prime factors each. What is the first of these numbers?
 
-USE: combinators
 USE: kernel
-USE: locals
+USE: lists
+USE: lists.lazy
 USE: math
-USE: math.functions
-USE: math.primes
+USE: math.primes.factors
+USE: math.ranges
 USE: prettyprint
+USE: sequences
 IN: euler47
 
-: factor-out ( x y -- z )
-    [ 2dup divisor? ]
-    [ dup [ / ] dip ]
-    while
-    drop ;
-
-:: 4-prime-factors? ( x n p -- ? )
-    {
-        { [ n 4 >= ] [ t ] }
-        { [ n 3 = x 1 > and ] [ t ] }
-        { [ p x sqrt > ] [ f ] }
-        [
-            x p factor-out
-            x p divisor? 1 0 ? n +
-            p next-prime
-            4-prime-factors?
-        ]
-    } cond ;
-recursive
-
 : euler47 ( -- )
-    0 1
-    [ over 4 < ]
-    [
-        dup 0 2 4-prime-factors?
-        [ [ 1 + ] dip ]
-        [ [ drop 0 ] dip ]
-        if
-        1 +
-    ]
-    while
-    nip 4 - . ;
+    1 lfrom [ dup 3 + [a,b] [ unique-factors length 4 = ] all? ] lfilter car . ;
 
 MAIN: euler47
