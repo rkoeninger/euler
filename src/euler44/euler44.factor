@@ -8,6 +8,7 @@
 ! sum and difference are pentagonal and D = |P(k) − P(j)| is minimised;
 ! what is the value of D?
 
+USE: arrays
 USE: combinators.short-circuit
 USE: kernel
 USE: locals
