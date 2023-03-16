@@ -1,32 +1,22 @@
-! It can be seen that the number, 125874, and its double,
-! 251748, contain exactly the same digits, but in a different order.
-
-! Find the smallest positive integer, x, such that 2x, 3x, 4x, 5x, and 6x,
-! contain the same digits.
+! Find the smallest positive integer, x, such that
+! 2*x, 3*x, 4*x, 5*x, and 6*x, contain the same digits.
 
 USE: kernel
+USE: lists
+USE: lists.lazy
 USE: math
-USE: math.order
 USE: math.parser
 USE: math.ranges
 USE: prettyprint
 USE: sequences
+USE: sets
 USE: sorting
 IN: euler52
 
-: answer? ( x -- ? )
-    [ * number>string string>digits [ <=> ] sort ] curry
-    { 2 3 4 5 6 } swap
-    map
-    [ rest ]
-    [ first ]
-    bi
-    [ = ] curry
-    all? ;
+:: answer? ( x -- ? )
+    { 2 3 4 5 6 } [ x * number>string natural-sort ] map cardinality 1 = ;
 
 : euler52 ( -- )
-    1000000 [1,b]
-    [ answer? ]
-    find nip . ;
+    1 lfrom [ answer? ] lfilter car . ;
 
 MAIN: euler52
