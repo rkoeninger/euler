@@ -13,18 +13,13 @@ USE: prettyprint
 USE: sequences
 IN: euler39
 
-:: triangle-count ( n -- m )
-    n 2 - [1,b]
-    [| a |
-        2 n [a,b]
-        [| b |
-            a sq b sq +
-            n a - b - sq
-            =
-        ]
-        count
-    ]
-    map-sum 2 / ;
+: pythagorean? ( c b a -- ? )
+    [ sq ] tri@ + = ;
+
+:: triangle-count ( p -- n )
+    p 2 - [1,b]
+    [| a | 2 p [a,b] [| b | p a - b - a b pythagorean? ] count ]
+    map-sum ;
 
 : euler39 ( -- )
     1000 [1,b] [ triangle-count ] supremum-by . ;
