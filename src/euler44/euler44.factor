@@ -9,7 +9,6 @@
 ! what is the value of D?
 
 USE: arrays
-USE: combinators.short-circuit
 USE: kernel
 USE: locals
 USE: math
@@ -22,10 +21,10 @@ USE: sequences.extras
 IN: euler44
 
 : pentagonal ( x -- p )
-    dup sq 3 * swap - 2/ ; inline
+    dup sq 3 * swap - 2/ ;
 
 : pentagonal? ( x -- ? )
-    24 * 1 + sqrt 1 + { [ dup floor = ] [ >integer 6 divisor? ] } 1&& ; inline
+    24 * 1 + sqrt 6 mod 5.0 = ;
 
 : euler44 ( -- )
     2 5000 [a,b] [| j | j [1,b) [| k | j k [ pentagonal ] bi@ 2array ] map ] map-concat
