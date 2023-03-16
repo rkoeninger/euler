@@ -8,6 +8,7 @@
 ! Which prime, below one-million, can be written
 ! as the sum of the most consecutive primes?
 
+USE: arrays
 USE: kernel
 USE: math
 USE: math.primes
@@ -19,7 +20,7 @@ IN: euler50
 : euler50 ( -- )
     4000 primes-upto
     all-subseqs
-    [ [ sum ] [ length ] bi { } 2sequence ] map
+    [ [ sum ] [ length ] bi 2array ] map
     [ first [ 1000000 < ] [ prime? ] bi and ] filter
     [ second ] supremum-by first . ;
 
