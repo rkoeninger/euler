@@ -174,4 +174,10 @@ IN: euler54
     "./work/euler54/p054_poker.txt" utf8 file-lines
     [ parse-line player1-wins ] count . ;
 
+! TODO: simplify by pre-processing hand
+! "8C TS KC 9H 4S 7D 2S 5D 3S AC" parse-line drop
+! [ [ first ] map histogram >alist [ first ] map-sort reverse ]
+! [ [ second ] map cardinality 1 = ]
+! bi 2array .
+
 MAIN: euler54
