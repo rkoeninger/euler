@@ -18,22 +18,19 @@
 USE: kernel
 USE: locals
 USE: math
-USE: math.order
 USE: math.parser
 USE: math.ranges
 USE: prettyprint
 USE: sequences
+USE: sequences.extras
 USE: sorting
-USE: strings
 IN: euler38
 
 : pandigital? ( s -- ? )
-    [ <=> ] sort >string "123456789" = ;
+    natural-sort "123456789" sequence= ;
 
 :: concat-product ( n x -- s )
-    n [1,b]
-    [ x * number>string ] map
-    concat ;
+    n [1,b] [ x * number>string ] map-concat ;
 
 : euler38 ( -- )
     100000 [1,b]
