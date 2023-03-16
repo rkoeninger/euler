@@ -20,8 +20,8 @@ IN: euler70
 
 : permutation? ( x y -- ? )
     {
-        [ [ log10 >integer ] bi@ = ]
-        [ [ number>string natural-sort ] bi@ = ]
+        [ [ log10 >integer ] same? ]
+        [ [ number>string natural-sort ] same? ]
     } 2&& ;
 
 : euler70 ( -- )
