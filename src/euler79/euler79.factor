@@ -7,21 +7,20 @@
 ! the file so as to determine the shortest possible secret passcode of
 ! unknown length.
 
+USE: io
 USE: io.encodings.utf8
 USE: io.files
 USE: kernel
 USE: locals
 USE: math
-USE: math.parser
-USE: prettyprint
+USE: memoize
 USE: sequences
 USE: sets
 USE: splitting
 IN: euler79
 
-: keylog ( -- codes )
-    "./work/euler79/keylog.txt" utf8 file-contents
-    { 10 13 } split ;
+MEMO: keylog ( -- codes )
+    "./work/euler79/keylog.txt" utf8 file-lines ;
 
 :: reorder ( code x y -- )
     code [ x = ] find drop
@@ -34,11 +33,10 @@ IN: euler79
 : euler79 ( -- )
     keylog dup concat members swap
     [
-        [ dupd [ 0 swap nth ] [ 1 swap nth ] bi reorder ]
-        [ dupd [ 1 swap nth ] [ 2 swap nth ] bi reorder ]
+        [ dupd [ first ] [ second ] bi reorder ]
+        [ dupd [ second ] [ third ] bi reorder ]
         bi
     ]
-    each
-    string>number . ;
+    each print ;
 
 MAIN: euler79
