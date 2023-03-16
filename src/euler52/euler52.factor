@@ -4,6 +4,7 @@
 USE: kernel
 USE: lists
 USE: lists.lazy
+USE: locals
 USE: math
 USE: math.parser
 USE: math.ranges
