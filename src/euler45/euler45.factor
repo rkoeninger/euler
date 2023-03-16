@@ -9,10 +9,12 @@
 ! Find the next triangle number that is also pentagonal
 ! and hexagonal.
 
+USE: combinators.short-circuit
 USE: kernel
+USE: lists
+USE: lists.lazy
 USE: math
 USE: math.functions
-USE: math.quadratic
 USE: prettyprint
 IN: euler45
 
@@ -20,21 +22,15 @@ IN: euler45
     dup 1 + * 2 / ;
 
 : pentagonal? ( x -- ? )
-    neg -0.5 1.5 quadratic drop dup round = ;
+    24 * 1 + sqrt 6 mod 5.0 = ;
 
 : hexagonal? ( x -- ? )
-    neg -1 2 quadratic drop dup round = ;
-
-: pentahexagonal? ( x -- ? )
-    [ pentagonal? ]
-    [ hexagonal? ]
-    bi and ;
+    8 * 1 + sqrt 4 mod 3.0 = ;
 
 : euler45 ( -- )
-    286
-    [ dup triangle pentahexagonal? not ]
-    [ 1 + ]
-    while
-    triangle . ;
+    286 lfrom
+    [ triangle ] lmap-lazy
+    [ pentagonal? ] lfilter
+    [ hexagonal? ] lfilter car . ;
 
 MAIN: euler45
