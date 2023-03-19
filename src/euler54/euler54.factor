@@ -1,5 +1,6 @@
 ! How many hands in "p054_poker.txt" does Player 1 win?
 
+USE: accessors
 USE: arrays
 USE: assocs
 USE: combinators
