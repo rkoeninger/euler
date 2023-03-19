@@ -32,6 +32,9 @@ TUPLE: graded ranks grade ;
     [ [ second ] map cardinality 1 = ]
     tri hand boa ;
 
+: aces-low ( ranks -- ranks' )
+    { 14 } { 1 } replace natural-sort reverse ;
+
 : desc-series? ( seq -- ? )
     2 clump [ [ first ] [ second ] bi - 1 = ] all? ;
 
@@ -44,9 +47,8 @@ TUPLE: graded ranks grade ;
     ?grade ;
 
 : ?straight-flush-aces-low ( hand -- graded )
-    ! TODO: { 14 } { 1 } replace natural-sort reverse
-    [ [ single-suit>> ] [ ranks>> desc-series? ] bi and ]
-    [ ranks>> 8 ]
+    [ [ single-suit>> ] [ ranks>> aces-low desc-series? ] bi and ]
+    [ ranks>> aces-low 8 ]
     ?grade ;
 
 : ?4-of-a-kind ( hand -- graded )
@@ -66,8 +68,7 @@ TUPLE: graded ranks grade ;
     [ ranks>> desc-series? ] [ ranks>> 4 ] ?grade ;
 
 : ?straight-aces-low ( hand -- graded )
-    ! TODO: { 14 } { 1 } replace natural-sort reverse
-    [ ranks>> desc-series? ] [ ranks>> 4 ] ?grade ;
+    [ ranks>> aces-low desc-series? ] [ ranks>> aces-low 4 ] ?grade ;
 
 : ?3-of-a-kind ( hand -- graded )
     [ hist>> 3 swap value? ]
