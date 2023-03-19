@@ -132,19 +132,17 @@ TUPLE: graded ranks grade ;
         [ high-card ]
     } 1|| ;
 
-: compare-ranks ( h1 h2 -- ? )
+: compare-ranks ( h1 h2 -- n )
     [ ranks>> ] bi@
     [ - ] 2map
     [ 0 = not ] find nip
     dup 0 ? ;
 
-: compare-hands ( h1 h2 -- ? )
-    2dup [ grade>> ] bi@ - sgn
-    {
-        {  1 [ 2drop  1 ] }
-        { -1 [ 2drop -1 ] }
-        [ compare-ranks ]
-    } case ;
+: compare-hands ( h1 h2 -- n )
+    2dup [ grade>> ] bi@ -
+    [ compare-ranks ]
+    [ 2nip ]
+    if-zero ;
 
 CONSTANT: rank-letters { CHAR: T CHAR: J CHAR: Q CHAR: K CHAR: A }
 
