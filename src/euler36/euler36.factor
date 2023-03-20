@@ -1,4 +1,4 @@
-! The decimal number, 585 = 10010010012 (binary),
+! The decimal number, 585 = 1001001001 (binary),
 ! is palindromic in both bases.
 
 ! Find the sum of all numbers, less than one million,
@@ -15,11 +15,8 @@ IN: euler36
     dup reverse = ;
 
 : double-palindrome? ( n -- ? )
-    [ number>string ]
-    [ >bin ]
-    bi
-    [ palindrome? ]
-    both? ;
+    [ 2 >base ] [ 10 >base ] bi
+    [ palindrome? ] both? ;
 
 : euler36 ( -- )
     1000000 [1,b)
