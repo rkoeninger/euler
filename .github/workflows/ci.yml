@@ -92,5 +92,5 @@ jobs:
       - run: ./prob 97  8739992577
       - run: ./prob 100 756872327473
       - run: ./prob 102 228
-      - run: ./prob 104  ???
+      - run: ./prob 104 329468
         if: ${{ false }}
