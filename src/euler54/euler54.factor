@@ -17,6 +17,7 @@ USE: math.ranges
 USE: math.statistics
 USE: prettyprint
 USE: sequences
+USE: sequences.extras
 USE: sets
 USE: sorting
 USE: sorting.extras
