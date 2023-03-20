@@ -6,6 +6,7 @@ USE: assocs
 USE: combinators
 USE: combinators.short-circuit
 USE: grouping
+USE: grouping.extras
 USE: io.encodings.utf8
 USE: io.files
 USE: kernel
@@ -30,14 +31,19 @@ TUPLE: graded ranks grade ;
 : <hand> ( cards -- hand )
     [ [ first ] map natural-sort reverse ]
     [ [ first ] map histogram >alist [ first ] map-sort reverse ]
-    [ [ second ] map cardinality 1 = ]
+    [ [ second ] map all-equal? ]
     tri hand boa ;
 
 : aces-low ( ranks -- ranks' )
     { 14 } { 1 } replace natural-sort reverse ;
 
 : desc-series? ( seq -- ? )
-    2 clump [ [ first ] [ second ] bi - 1 = ] all? ;
+    [ 1 + = ] monotonic? ;
+
+: sort-groups-desc ( alist -- seq )
+    [ second ] group-by
+    [ first ] map-sort reverse
+    [ second [ first ] map natural-sort reverse ] map-concat ;
 
 : ?straight-flush ( hand -- graded )
     {
@@ -54,13 +60,13 @@ TUPLE: graded ranks grade ;
 : ?4-of-a-kind ( hand -- graded )
     {
         [ hist>> 4 swap value? ]
-        [| h | { 4 1 } [ h hist>> value-at ] map 7 graded boa ]
+        [ hist>> sort-groups-desc 7 graded boa ]
     } 1&& ;
 
 : ?full-house ( hand -- graded )
     {
         [| h | { 3 2 } [ h hist>> value? ] all? ]
-        [| h | { 3 2 } [ h hist>> value-at ] map 6 graded boa ]
+        [ hist>> sort-groups-desc 6 graded boa ]
     } 1&& ;
 
 : ?flush ( hand -- graded )
@@ -78,33 +84,19 @@ TUPLE: graded ranks grade ;
 : ?3-of-a-kind ( hand -- graded )
     {
         [ hist>> 3 swap value? ]
-        [ hist>> 3 swap value-at 1array 3 graded boa ]
+        [ hist>> sort-groups-desc 3 graded boa ]
     } 1&& ;
 
 : ?2-pair ( hand -- graded )
     {
         [ hist>> values histogram 2 of 2 = ]
-        [| h |
-            h hist>> [ second 2 = ] filter [ first ] map natural-sort reverse
-            1 h hist>> value-at
-            suffix
-            2
-            graded boa
-        ]
+        [ hist>> sort-groups-desc 2 graded boa ]
     } 1&& ;
 
 : ?1-pair ( hand -- graded )
     {
         [ hist>> 2 swap value? ]
-        [| h |
-            [let 2 h hist>> value-at :> lead-rank
-                lead-rank h ranks>> remove
-                lead-rank
-                prefix
-                1
-                graded boa
-            ]
-        ]
+        [ hist>> sort-groups-desc 1 graded boa ]
     } 1&& ;
 
 : high-card ( hand -- graded )
