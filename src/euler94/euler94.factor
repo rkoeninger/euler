@@ -16,6 +16,7 @@ USE: lists
 USE: lists.lazy
 USE: locals
 USE: math
+USE: math.functions
 USE: math.order
 USE: prettyprint
 USE: sequences
@@ -27,16 +28,23 @@ IN: euler94
     [ 2 * * ]
     2tri ;
 
-:: lfrom-to ( x y -- list )
-    x lfrom [ y < ] lwhile ;
+:: lupto ( x -- list )
+    1 lfrom [ x < ] lwhile ;
+
+: lsum ( lsum -- n )
+    0 [ + ] foldl ;
 
 : euler94 ( -- )
-    2 25000 lfrom-to
-    [| m | 1 m lfrom-to [| n | m n 2array ] lmap-lazy ] lmap-lazy lconcat
-    [ first2 mn>triple 3array ] lmap-lazy
-    [ first3 min 2 * - abs 1 = ] lfilter
-    [ first3 min [ 2 * ] bi@ + ] lmap-lazy
-    [ 1000000000 <= ] lfilter
-    0 [ + ] foldl . ;
+    1000000000 1 + 3 / sqrt >integer lupto
+    [| m |
+        m lupto
+        [| n | m n 2array ] lmap-lazy
+        [ first2 gcd nip 1 = ] lfilter
+        [ first2 mn>triple 3array ] lmap-lazy
+        [ first3 min 2 * - abs 1 = ] lfilter
+        [ first3 min [ 2 * ] bi@ + ] lmap-lazy
+        [ 1000000000 <= ] lfilter
+        lsum
+    ] lmap-lazy lsum . ;
 
 MAIN: euler94
