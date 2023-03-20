@@ -78,15 +78,7 @@ TUPLE: graded ranks grade ;
 : ?3-of-a-kind ( hand -- graded )
     {
         [ hist>> 3 swap value? ]
-        [| h |
-            [let 3 h hist>> value-at :> lead-rank
-                lead-rank h ranks>> remove
-                lead-rank
-                prefix
-                3
-                graded boa
-            ]
-        ]
+        [ hist>> 3 swap value-at 1array 3 graded boa ]
     } 1&& ;
 
 : ?2-pair ( hand -- graded )
