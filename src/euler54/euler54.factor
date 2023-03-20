@@ -42,8 +42,8 @@ TUPLE: graded ranks grade ;
     [ 1 + = ] monotonic? ;
 
 : sort-groups-desc ( alist -- seq )
+    [ second ] map-sort reverse
     [ second ] group-by
-    [ first ] map-sort reverse
     [ second [ first ] map natural-sort reverse ] map-concat ;
 
 : ?straight-flush ( hand -- graded )
