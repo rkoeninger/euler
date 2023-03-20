@@ -31,20 +31,32 @@ IN: euler94
 :: lupto ( x -- list )
     1 lfrom [ x < ] lwhile ;
 
-: lsum ( lsum -- n )
-    0 [ + ] foldl ;
+: lmap-sum ( list quot -- n )
+    lmap-lazy 0 [ + ] foldl ; inline
 
 : euler94 ( -- )
     1000000000 1 + 3 / sqrt >integer lupto
     [| m |
         m lupto
-        [| n | m n 2array ] lmap-lazy
-        [ first2 gcd nip 1 = ] lfilter
-        [ first2 mn>triple 3array ] lmap-lazy
-        [ first3 min 2 * - abs 1 = ] lfilter
-        [ first3 min [ 2 * ] bi@ + ] lmap-lazy
-        [ 1000000000 <= ] lfilter
-        lsum
-    ] lmap-lazy lsum . ;
+        [| n |
+            m n gcd nip 1 =
+            [
+                [let m n mn>triple :> ( c b a )
+                     a b min 2 * :> s
+                    s c - abs 1 =
+                    [
+                        c 2 * s +
+                        dup 1000000000 >
+                        [ drop 0 ]
+                        when
+                    ]
+                    [ 0 ]
+                    if
+                ]
+            ]
+            [ 0 ]
+            if
+        ] lmap-sum
+    ] lmap-sum . ;
 
 MAIN: euler94
