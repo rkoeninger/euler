@@ -16,7 +16,7 @@ USE: lists
 USE: lists.lazy
 USE: locals
 USE: math
-USE: math.functions
+USE: math.order
 USE: prettyprint
 USE: sequences
 IN: euler94
