@@ -34,7 +34,7 @@ IN: euler94
     2 25000 lfrom-to
     [| m | 1 m lfrom-to [| n | m n 2array ] lmap-lazy ] lmap-lazy lconcat
     [ first2 mn>triple 3array ] lmap-lazy
-    [ first3 min 2 * 1 - = ] lfilter
+    [ first3 min 2 * - abs 1 = ] lfilter
     [ first3 min [ 2 * ] bi@ + ] lmap-lazy
     [ 1000000000 <= ] lfilter
     0 [ + ] foldl . ;
