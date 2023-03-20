@@ -11,33 +11,30 @@
 ! exceed one billion (1,000,000,000).
 
 USE: kernel
+USE: lists
+USE: lists.lazy
 USE: locals
 USE: math
-USE: math.functions
-USE: math.ranges
 USE: prettyprint
 USE: sequences
 IN: euler94
 
-:: area ( n k -- x )
-    n 3 * k +
-    n k + sq
-    n k -
-    * * sqrt 4 / ;
+: mn>triple ( m n -- c b a )
+    [ [ sq ] bi@ + ]
+    [ [ sq ] bi@ - abs ]
+    [ 2 * * ]
+    2tri ;
 
-: perimeter ( n k -- x )
-    2dup area dup round =
-    [ swap 3 * + ]
-    [ 2drop 0 ]
-    if ;
+:: lfrom-to ( x y -- list )
+    x lfrom [ y < ] lwhile ;
 
 : euler94 ( -- )
-    2 333333333 [a,b]
-    [
-        [  1 perimeter ]
-        [ -1 perimeter ]
-        bi +
-    ]
-    map-sum . ;
+    2 25000 lfrom-to
+    [| m | 1 m lfrom-to [| n | m n 2array ] lmap-lazy ] lmap-lazy lconcat
+    [ first2 mn>triple 3array ] lmap-lazy
+    [ first3 min 2 * 1 - = ] lfilter
+    [ first3 min [ 2 * ] bi@ + ] lmap-lazy
+    [ 1000000000 <= ] lfilter
+    0 [ + ] foldl . ;
 
 MAIN: euler94
