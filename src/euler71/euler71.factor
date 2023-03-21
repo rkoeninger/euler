@@ -6,13 +6,15 @@ USE: arrays
 USE: kernel
 USE: math
 USE: math.ranges
+USE: prettyprint
 USE: sequences
 IN: euler71
 
 : euler71 ( -- )
     2 1000000 [a,b]
-    [ dup 3 * 7 /i swap 2array ] map
-    [ first2 /f 3 7 /f < ] filter
-    [ first2 /f 3 7 /f swap - ] infimum-by first . ;
+    [ dup 3 * 7 /i swap / ] map
+    [ >float 3 7 /f < ] filter
+    [ >float 3 7 /f swap - ] infimum-by
+    >fraction drop . ;
 
 MAIN: euler71
