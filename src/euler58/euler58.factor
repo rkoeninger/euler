@@ -17,11 +17,13 @@
 ! If this process is continued, what is the side length of the square spiral
 ! for which the ratio of primes along both diagonals first falls below 10%?
 
+USE: arrays
 USE: kernel
 USE: locals
 USE: math
 USE: math.primes
 USE: prettyprint
+USE: sequences
 IN: euler58
 
 :: corner-numbers ( n -- ns )
