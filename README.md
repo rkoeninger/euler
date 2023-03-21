@@ -69,6 +69,7 @@ Factor's bundled library includes tons of helpful "vocabularies" like `math.comb
 | 67 | [Max value path through 100-row triangluar grid](https://projecteuler.net/problem=67) | [euler67.factor](https://github.com/rkoeninger/euler/blob/master/src/euler67/euler67.factor) |
 | 69 | [Value in \[1..1,000,000\] where n/φ(n) is greatest](https://projecteuler.net/problem=69) | [euler69.factor](https://github.com/rkoeninger/euler/blob/master/src/euler69/euler69.factor) |
 | 70 | [Value in \[1..(10^7)-1\] where n, φ(n) are permutations and n/φ(n) is least](https://projecteuler.net/problem=70) | [euler70.factor](https://github.com/rkoeninger/euler/blob/master/src/euler70/euler70.factor) |
+| 71 | [Find closest, lower fraction to 3/7 with denominator <= 1,000,000](https://projecteuler.net/problem=71) | [euler71.factor](https://github.com/rkoeninger/euler/blob/master/src/euler71/euler71.factor) |
 | 72 | [Count of reduced fractions in \(0,1\) with denominator in \[2..1,000,000\]](https://projecteuler.net/problem=72) | [euler72.factor](https://github.com/rkoeninger/euler/blob/master/src/euler72/euler72.factor) |
 | 79 | [Derive passcode from sample subsequences](https://projecteuler.net/problem=79) | [euler79.factor](https://github.com/rkoeninger/euler/blob/master/src/euler79/euler79.factor) |
 | 85 | [Area of rectangular grid with number of sub-rectangles closest to 2,000,000](https://projecteuler.net/problem=85) | [euler85.factor](https://github.com/rkoeninger/euler/blob/master/src/euler85/euler85.factor) |
