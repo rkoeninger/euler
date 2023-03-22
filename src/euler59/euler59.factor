@@ -22,6 +22,7 @@ USE: math
 USE: math.parser
 USE: math.ranges
 USE: memoize
+USE: prettyprint
 USE: sequences
 USE: sequences.repeating
 USE: sets
