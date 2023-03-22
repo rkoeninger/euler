@@ -83,6 +83,7 @@ jobs:
       - run: ./prob  56  972
       - run: ./prob  57  153
       - run: ./prob  58  26241
+      - run: ./prob  59  129448
       - run: ./prob  67  7273
       - run: ./prob  69  510510
       - run: ./prob  70  8319823

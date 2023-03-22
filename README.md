@@ -66,6 +66,7 @@ Factor's bundled library includes tons of helpful "vocabularies" like `math.comb
 | 56 | [Greatest digit sum for a^b where a, b = \[1..99\]](https://projecteuler.net/problem=56) | [euler56.factor](https://github.com/rkoeninger/euler/blob/master/src/euler56/euler56.factor) |
 | 57 | [Esitmations of sqrt(2) that have greater numerator](https://projecteuler.net/problem=57) | [euler57.factor](https://github.com/rkoeninger/euler/blob/master/src/euler57/euler57.factor) |
 | 58 | [Ratio of # of primes/all #'s in diagonals of outward spiraling grid](https://projecteuler.net/problem=58) | [euler58.factor](https://github.com/rkoeninger/euler/blob/master/src/euler58/euler58.factor) |
+| 59 | [Reverse XOR cypher of english text](https://projecteuler.net/problem=59) | [euler59.factor](https://github.com/rkoeninger/euler/blob/master/src/euler59/euler59.factor) |
 | 67 | [Max value path through 100-row triangluar grid](https://projecteuler.net/problem=67) | [euler67.factor](https://github.com/rkoeninger/euler/blob/master/src/euler67/euler67.factor) |
 | 69 | [Value in \[1..1,000,000\] where n/φ(n) is greatest](https://projecteuler.net/problem=69) | [euler69.factor](https://github.com/rkoeninger/euler/blob/master/src/euler69/euler69.factor) |
 | 70 | [Value in \[1..(10^7)-1\] where n, φ(n) are permutations and n/φ(n) is least](https://projecteuler.net/problem=70) | [euler70.factor](https://github.com/rkoeninger/euler/blob/master/src/euler70/euler70.factor) |
