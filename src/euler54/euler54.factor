@@ -35,8 +35,13 @@ TUPLE: graded ranks grade ;
     [ [ second ] map all-equal? ]
     tri hand boa ;
 
-: aces-low ( ranks -- ranks' )
-    { 14 } { 1 } replace natural-sort reverse ;
+! TODO: hist does not get modified, happens to not be used in ?straight,
+!       so this will work but still not great design
+: ace-low ( hand -- hand' )
+    [ ranks>> { 14 } { 1 } replace natural-sort reverse ]
+    [ hist>> ]
+    [ single-suit>> ]
+    tri hand boa ;
 
 : desc-series? ( seq -- ? )
     [ 1 + = ] monotonic? ;
@@ -48,14 +53,9 @@ TUPLE: graded ranks grade ;
 
 : ?straight-flush ( hand -- graded )
     {
-        [ [ single-suit>> ] [ ranks>> desc-series? ] bi and ]
+        [ single-suit>> ]
+        [ ranks>> desc-series? ]
         [ ranks>> 8 graded boa ]
-    } 1&& ;
-
-: ?straight-flush-aces-low ( hand -- graded )
-    {
-        [ [ single-suit>> ] [ ranks>> aces-low desc-series? ] bi and ]
-        [ ranks>> aces-low 8 graded boa ]
     } 1&& ;
 
 : ?4-of-a-kind ( hand -- graded )
@@ -66,20 +66,21 @@ TUPLE: graded ranks grade ;
 
 : ?full-house ( hand -- graded )
     {
-        [| h | { 3 2 } [ h hist>> value? ] all? ]
+        [ hist>> 3 swap value? ]
+        [ hist>> 2 swap value? ]
         [ hist>> sort-groups-desc 6 graded boa ]
     } 1&& ;
 
 : ?flush ( hand -- graded )
-    { [ single-suit>> ] [ ranks>> 5 graded boa ] } 1&& ;
+    {
+        [ single-suit>> ]
+        [ ranks>> 5 graded boa ]
+    } 1&& ;
 
 : ?straight ( hand -- graded )
-    { [ ranks>> desc-series? ] [ ranks>> 4 graded boa ] } 1&& ;
-
-: ?straight-aces-low ( hand -- graded )
     {
-        [ ranks>> aces-low desc-series? ]
-        [ ranks>> aces-low 4 graded boa ]
+        [ ranks>> desc-series? ]
+        [ ranks>> 4 graded boa ]
     } 1&& ;
 
 : ?3-of-a-kind ( hand -- graded )
@@ -106,12 +107,12 @@ TUPLE: graded ranks grade ;
 : grade-hand ( hand -- graded )
     {
         [ ?straight-flush ]
-        [ ?straight-flush-aces-low ]
+        [ ace-low ?straight-flush ]
         [ ?4-of-a-kind ]
         [ ?full-house ]
         [ ?flush ]
         [ ?straight ]
-        [ ?straight-aces-low ]
+        [ ace-low ?straight ]
         [ ?3-of-a-kind ]
         [ ?2-pair ]
         [ ?1-pair ]
@@ -140,12 +141,11 @@ CONSTANT: rank-letters { CHAR: T CHAR: J CHAR: Q CHAR: K CHAR: A }
 
 : parse-line ( line -- h1 h2 )
     { 32 } split-harvest
-    [ [ parse-rank ] [ 1 tail* ] bi 2array ] map
-    [ 5 head ] [ 5 tail* ] bi
-    [ <hand> ] bi@ ;
+    [ [ parse-rank ] [ second ] bi 2array ] map
+    [ 5 head ] [ 5 tail* ] bi ;
 
 : euler54 ( -- )
     "./work/euler54/p054_poker.txt" utf8 file-lines
-    [ parse-line [ grade-hand ] bi@ compare-hands 0 > ] count . ;
+    [ parse-line [ <hand> grade-hand ] bi@ compare-hands 0 > ] count . ;
 
 MAIN: euler54
